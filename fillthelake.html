@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>GÖL — Prototip v0.3 · Doğal Havza</title>
+<title>GÖL — Prototip v0.11 · Boru Hattı</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -222,6 +222,12 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;cur
   .sheet{padding:20px 17px}
 }
 #loadErr{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;padding:24px;background:#07160f;text-align:center}
+#ordCard{top:134px;left:14px;padding:10px 13px 11px;min-width:264px;max-width:300px}
+.ord{margin-top:8px;font-size:11px;font-weight:600;color:#cfe4d8}
+.ord .oh{display:flex;justify-content:space-between;gap:10px}
+.ord .oh b{color:var(--amber);font-family:'Sora';font-weight:800;white-space:nowrap}
+.ord .bar{height:6px;margin-top:4px}
+@media(max-width:900px){#ordCard{display:none}}
 </style>
 </head>
 <body>
@@ -290,26 +296,26 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;cur
 <div id="touch">
   <div id="lookPad"></div>
   <div id="stick"><div id="nub"></div></div>
-  <div id="tBtns"><button class="tb act" id="tE">E</button><button class="tb" id="tF">F</button><button class="tb" id="tJump">⤒</button><button class="tb" id="tSp">⇧</button></div>
+  <div id="tBtns"><button class="tb act" id="tE">E</button><button class="tb" id="tF">F</button><button class="tb" id="tQ">Q</button><button class="tb" id="tB">B</button><button class="tb" id="tX" style="display:none">✕</button><button class="tb" id="tJump">⤒</button><button class="tb" id="tSp">⇧</button></div>
 </div>
 
 <div class="ov" id="startOv"><div class="sheet scroll">
-  <div class="lbl" style="color:var(--amber)">Prototip v0.3 · doğal havza · first person</div>
-  <h1>Elinde <em>0,1 litre.</em><br>Önünde <em>bir milyon.</em></h1>
-  <p class="lead">Kayalık bir yamaçtan çıkan kaynak, sazlıklarla çevrili geniş ve düzensiz bir havza, ortasında derin bir göz. Kabını doldur, kıyıya dök, bir kısmını paketleyip sat. Oltayı at, kafesleri büyüt. Kaybetmek yok, süre yok.</p>
+  <div class="lbl" style="color:var(--amber)">Prototip v0.11 · elle boru döşe · gerçek su fiziği</div>
+  <h1>Elinde <em>0,1 litre.</em><br>Önünde <em>yirmi milyon.</em></h1>
+  <p class="lead">Kayalık bir yamaçtan çıkan kaynak, sazlıklarla çevrili geniş ve düzensiz bir havza, ortasında derin bir göz. Kabını doldur, istediğin yere dök — su gerçekten akar, yokuş aşağı süzülüp göle ulaşır. Bir kısmını paketleyip sat. Oltayı at, kafesleri büyüt. Kaybetmek yok, süre yok.</p>
   <div class="loop">
     <div class="ls"><i>🪨</i><b>DOLDUR</b><small>kaynak · kap animasyonu</small></div><span class="arw">→</span>
     <div class="ls"><i>🏃</i><b>TAŞI</b><small>koşu + zıplama</small></div><span class="arw">→</span>
-    <div class="ls"><i>🌊</i><b>DÖK</b><small>kıyıya eğil, akıt</small></div><span class="arw">→</span>
+    <div class="ls"><i>🌊</i><b>DÖK</b><small>her yere · su fiziği</small></div><span class="arw">→</span>
     <div class="ls"><i>📦</i><b>PAKETLE</b><small>para buradan</small></div><span class="arw">→</span>
     <div class="ls"><i>🎣</i><b>BALIK</b><small>ikinci ana gelir</small></div>
   </div>
   <h3>Kontroller</h3>
   <div class="keys">
-    <div class="key"><kbd>W A S D</kbd>yürü</div><div class="key"><kbd>Shift</kbd>koş (su dökülür)</div>
-    <div class="key"><kbd>Space</kbd>zıpla</div><div class="key"><kbd>E</kbd>etkileşim / basılı tut</div>
-    <div class="key"><kbd>F</kbd>oltayı at / topla</div><div class="key"><kbd>Tab</kbd>yükseltmeler</div>
-    <div class="key"><kbd>R</kbd>kampa dön (sıkışırsan)</div><div class="key"><kbd>M</kbd>ses · <kbd>Esc</kbd>duraklat</div>
+    <div class="key"><kbd>W A S D</kbd>yürü</div><div class="key"><kbd>Shift</kbd>koş</div>
+    <div class="key"><kbd>Space</kbd>zıpla</div><div class="key"><kbd>E</kbd> / <kbd>Sol tık</kbd>etkileşim · basılı tut</div>
+    <div class="key"><kbd>F</kbd>oltayı at / topla</div><div class="key"><kbd>B</kbd>boru döşe (sağ tık: geri al)</div><div class="key"><kbd>Tab</kbd>yükseltmeler</div>
+    <div class="key"><kbd>Q</kbd>/<kbd>Sağ tık</kbd>her yere dök</div><div class="key"><kbd>Tık</kbd>yerdeki suyu geri al</div><div class="key"><kbd>M</kbd>ses · <kbd>Esc</kbd>duraklat</div>
   </div>
   <div class="grid4">
     <div class="stat"><div class="lbl">Havza</div><b id="sBasin">—</b><div class="mini">düzensiz kıyı · derin göz</div></div>
@@ -319,7 +325,7 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;cur
   </div>
   <div class="row"><button class="btn pri" id="startBtn"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z" fill="currentColor" stroke="none"/></svg>Kıyıya İn</button>
   <button class="btn" id="contBtn" style="display:none"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>Kayıttan Devam</button></div>
-  <p class="mini" style="margin-top:14px">Su hacmi gerçek havza geometrisinden sayısal olarak integre edilir: 1.000.000 L = 1.000 m³. Doğuş noktası her açılışta açıklık testinden geçirilir; ağaç, kaya veya yapının içinde kalmazsın.</p>
+  <p class="mini" style="margin-top:14px">Su hacmi gerçek havza geometrisinden sayısal olarak integre edilir: 20.000.000 L = 20.000 m³. Dökülen su parçacık olarak akar; göl havzasına ulaşınca hacme eklenir, kuru toprakta birikirse zamanla emilir. Doğuş noktası her açılışta açıklık testinden geçirilir; ağaç, kaya veya yapının içinde kalmazsın.</p>
 </div></div>
 
 <div class="ov hide" id="pauseOv"><div class="sheet sm scroll">
@@ -328,8 +334,10 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;cur
   <div class="setrow"><span>Fare hassasiyeti</span><input type="range" id="sensR" min="20" max="260" value="110" style="width:150px"></div>
   <div class="setrow"><span>Görüş açısı (FOV)</span><input type="range" id="fovR" min="60" max="100" value="80" style="width:150px"></div>
   <div class="setrow"><span>Yürüyüş salınımı</span><div class="tog on" id="bobT"></div></div>
-  <div class="setrow"><span>Koşarken dökülme</span><div class="tog on" id="spillT"></div></div>
+  
   <div class="setrow"><span>Ses</span><div class="tog on" id="audT"></div></div>
+  <div class="setrow"><span>Test modu</span><button class="btn" id="testBtn" style="padding:6px 14px">+1.000.000 ₺</button></div>
+  <div class="setrow"><span>Test modu</span><button class="btn" id="testLakeBtn" style="padding:6px 14px">+100.000 L göle</button></div>
   <h3>Ekonomi (anlık)</h3>
   <div class="grid4" style="margin-top:6px">
     <div class="stat"><div class="lbl">Paketleme</div><b id="ePack">0 ₺/dk</b></div>
@@ -337,8 +345,8 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;cur
     <div class="stat"><div class="lbl">Oto-olta</div><b id="eFish">0 ₺/dk</b></div>
     <div class="stat"><div class="lbl">Toplam çekim</div><b id="eDraw">0 L</b></div>
   </div>
-  <div class="warn">Bir kayanın ya da yapının içinde sıkıştıysan <kbd>R</kbd> ile kampa dönebilirsin. Ayrıca hareket ederken seni otomatik olarak en yakın açıklığa iterim.</div>
-  <div class="row"><button class="btn pri" id="resumeBtn">Devam</button><button class="btn" id="campBtn">Kampa Dön</button><button class="btn" id="upBtn2">Yükseltmeler</button><button class="btn" id="resetBtn">Yeni Oyun</button></div>
+  <div class="warn">Bir kayanın ya da yapının içinde kalırsan seni otomatik olarak en yakın açıklığa iterim.</div>
+  <div class="row"><button class="btn pri" id="resumeBtn">Devam</button><button class="btn" id="upBtn2">Yükseltmeler</button><button class="btn" id="resetBtn">Yeni Oyun</button></div>
 </div></div>
 
 <div class="ov hide" id="upOv"><div class="sheet scroll">
@@ -353,7 +361,7 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;cur
 </div></div>
 
 <div class="ov hide" id="endOv"><div class="sheet scroll" style="text-align:center">
-  <div class="lbl" style="color:var(--amber)">1.000.000 litre</div>
+  <div class="lbl" style="color:var(--amber)">20.000.000 litre</div>
   <h1 style="margin-top:6px">Göl <em>doldu.</em></h1>
   <p class="lead" style="margin-left:auto;margin-right:auto">Toprak kâsedeki 0,1 litreden bir milyon litreye. Sazların arasından geçen rüzgâr, derin gözde dönen balıklar — hepsi senin taşıdığın su.</p>
   <div class="grid4" id="endStats"></div>
@@ -382,10 +390,10 @@ const D=(v,d=2)=>v.toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFracti
 window.addEventListener('error',e=>{const m=String(e.message||'');if(m.includes('import')||m.includes('module')||m.includes('three'))$('loadErr').style.display='flex';});
 
 /* ═══════════ BASIN ═══════════ */
-const GOAL=1000000;
-const LC={R0:34,A1:7,F1:3,P1:.7,A2:4.5,F2:5,P2:2.1,A3:3,F3:7,P3:4.3,S:.5,P:5,PS:6.5,B:2.4,PX:0,PZ:0,K:1};
+const GOAL=20000000;
+const LC={R0:84,A1:16,F1:3,P1:.7,A2:10,F2:5,P2:2.1,A3:6.5,F3:7,P3:4.3,S:.5,P:1.4,PS:15,B:1.3,PX:0,PZ:0,K:1};
 function shoreR(a){return LC.R0+LC.A1*Math.sin(LC.F1*a+LC.P1)+LC.A2*Math.sin(LC.F2*a+LC.P2)+LC.A3*Math.sin(LC.F3*a+LC.P3);}
-LC.PZ=shoreR(Math.PI/2)-11;
+LC.PZ=shoreR(Math.PI/2)-26;
 function bedRaw(x,z){
  const r=Math.hypot(x,z),a=Math.atan2(z,x),R=shoreR(a),t=r/R;
  const bowl=1-sstep(.10,1,t);
@@ -397,14 +405,14 @@ function bedRaw(x,z){
  const bank=LC.B*Math.pow(Math.max(t-1,0),1.4);
  return bank-dep;
 }
-const GN=176,GD=120,GC=GD/GN,GCA=GC*GC;
+const GN=240,GD=270,GC=GD/GN,GCA=GC*GC;
 const bedGrid=new Float32Array(GN*GN);
 let rawV=0,minRaw=0;
 for(let j=0;j<GN;j++)for(let i=0;i<GN;i++){
  const x=-GD/2+(i+.5)*GC,z=-GD/2+(j+.5)*GC,b=bedRaw(x,z);
  bedGrid[j*GN+i]=b;if(b<0){rawV+=-b*GCA;if(b<minRaw)minRaw=b;}
 }
-LC.K=1000/rawV;
+LC.K=GOAL/1000/rawV;
 for(let i=0;i<bedGrid.length;i++)bedGrid[i]*=LC.K;
 const bed=(x,z)=>bedRaw(x,z)*LC.K;
 const MINBED=minRaw*LC.K;
@@ -424,13 +432,15 @@ function lakeAt(vol){
 const depthAt=(x,z,lvl)=>lvl-bed(x,z);
 function terrainH(x,z){
  const b=bed(x,z),r=Math.hypot(x,z);
- const far=sstep(52,140,r);
- const hills=(Math.sin(x*.034)*Math.cos(z*.029)*4.2+Math.sin(x*.016+1.3)*3.1+Math.cos(z*.021-.7)*2.4)*far;
+ const far=sstep(118,270,r);
+ const hills=(Math.sin(x*.034)*Math.cos(z*.029)*6+Math.sin(x*.016+1.3)*4.5+Math.cos(z*.021-.7)*3.5)*far;
+ const ang=Math.atan2(z,x);
+ const ring=sstep(150,215,r)*(12+5*Math.sin(ang*4+1.2)+3*Math.sin(ang*9+.4));
  const rough=(Math.sin(x*.42)*Math.sin(z*.38)*.16+Math.sin(x*.9+z*.7)*.07)*sstep(-.05,.6,b);
- return b+hills+rough;
+ return b+hills+rough+ring;
 }
 function slopeAt(x,z){const e=1.2;return Math.hypot(terrainH(x+e,z)-terrainH(x-e,z),terrainH(x,z+e)-terrainH(x,z-e))/(2*e);}
-const FISH_VOL=30000,CAGE_VOL=150000,AF_VOL=350000;
+const FISH_VOL=600000,CAGE_VOL=3000000,AF_VOL=7000000;
 $('sBasin').textContent=nf.format(Math.round(FULL.area))+' m²';
 
 /* ═══════════ UPGRADES ═══════════ */
@@ -439,14 +449,15 @@ const UP=[
   t:[{v:.1,l:'Toprak Kâse'},{v:.5,l:'Bakır Maşrapa',c:6},{v:1.5,l:'Matara',c:35},{v:4,l:'Sürahi',c:140},{v:10,l:'Kova',c:480},{v:25,l:'Bidon',c:1700},{v:60,l:'El Arabası',c:6200},{v:150,l:'Tanklı Araba',c:21000}],
   f:v=>D(v,v<1?1:0)+' L'},
  {id:'fill',cat:'Taşıma',n:'Kaynak Basıncı',d:'Çeşmeden doldurma hızı.',t:[{v:14},{v:38,c:18},{v:110,c:85},{v:300,c:330},{v:850,c:1300},{v:2400,c:4800}],f:v=>nf.format(v)+' L/dk'},
+ {id:'dump',cat:'Taşıma',n:'Tezgâha Boşaltma',d:'Kabını tezgâh deposuna boşaltma hızı.',t:[{v:1,l:'Elle'},{v:2,l:'Huni',c:70},{v:4,l:'Geniş Huni',c:420},{v:8,l:'Boru Ağzı',c:2400},{v:16,l:'Pompalı Boşaltma',c:13000},{v:40,l:'Hidrolik Tank',c:90000}],f:v=>'×'+v+' hız'},
  {id:'speed',cat:'Taşıma',n:'Patika Ayakkabısı',d:'Yürüyüş hızı. Koşu her zaman ×1,76.',t:[{v:5},{v:6,c:55},{v:7,c:380},{v:8.2,c:1900},{v:9.4,c:8000}],f:v=>D(v,1)+' m/s'},
  {id:'jump',cat:'Taşıma',n:'Hafif Adım',d:'Zıplama yüksekliği ve havada kontrol.',t:[{v:1},{v:1.18,c:90},{v:1.36,c:600},{v:1.55,c:3200}],f:v=>'×'+D(v,2)},
  {id:'lid',cat:'Taşıma',n:'Kapak / Sızdırmazlık',d:'Koşarken ve inişte dökülen su. Son kademe: sıfır.',t:[{v:1},{v:.5,c:70},{v:.2,c:450},{v:0,c:2300}],f:v=>v===0?'dökülme yok':'%'+Math.round(v*100)},
- {id:'pipe',cat:'Hat',n:'Su Hattı',d:'Kaynaktan tesise sürekli akış. Pompada E basılı = 6× debi.',
-  t:[{v:0,l:'Yok'},{v:400,l:'Hortum',c:850,g:600},{v:2000,l:'El Pompası',c:3800,g:5000},{v:8000,l:'Ana Hat',c:15000,g:35000},{v:25000,l:'Şebeke',c:44000,g:150000},{v:60000,l:'Tam Kapasite',c:105000,g:450000}],
-  f:v=>v?nf.format(v)+' L/dk':'kurulu değil'},
+ {id:'pipe',cat:'Hat',n:'Boru Hattı',d:'Hattın debisi (boru kalınlığı). Boruyu B ile elle döşersin; pompada E basılı = 6× debi.',
+  t:[{v:0,l:'Yok'},{v:400,l:'Hortum',c:850,g:600},{v:2000,l:'El Pompası',c:3800,g:5000},{v:8000,l:'Ana Hat',c:15000,g:35000},{v:25000,l:'Şebeke',c:44000,g:150000},{v:60000,l:'Tam Kapasite',c:105000,g:450000},{v:240000,l:'Baraj Hattı',c:520000,g:150000}],
+  f:v=>v?nf.format(v)+' L/dk':'kilitli'},
  {id:'line',cat:'Hat',n:'Paketleme Hattı',d:'Tezgâh deposundaki suyu şişeler. Gelir = L/dk × net ₺/L.',
-  t:[{v:24,pl:6,mt:.5,l:'Elle Şişeleme'},{v:100,pl:3.4,mt:.3,l:'Yarı Otomatik',c:200},{v:380,pl:9,mt:1.8,l:'Premium Cam',c:2500,g:20000},{v:1300,pl:5.2,mt:.6,l:'Endüstriyel',c:16000,g:120000}],
+  t:[{v:24,pl:6,mt:.5,l:'Elle Şişeleme'},{v:100,pl:3.4,mt:.3,l:'Yarı Otomatik',c:200},{v:380,pl:9,mt:1.8,l:'Premium Cam',c:2500,g:20000},{v:1300,pl:5.2,mt:.6,l:'Endüstriyel',c:16000,g:120000},{v:4500,pl:4.4,mt:.5,l:'Dev Tesis',c:260000,g:100000}],
   f:(v,t)=>nf.format(v)+' L/dk · '+D(t.pl-t.mt,1)+' ₺/L'},
  {id:'tariff',cat:'Hat',n:'Su Tarifesi',d:'Kaynaktan çekilen her litrenin faturası.',t:[{v:.20},{v:.12,c:380},{v:.07,c:2900,g:30000},{v:.04,c:19000,g:200000}],f:v=>D(v,2)+' ₺/L'},
  {id:'autopay',cat:'Otomasyon',n:'Otomatik Fatura',d:'Satış geliri önce faturayı kapatır.',t:[{v:0,l:'Manuel'},{v:1,l:'Otomatik',c:1400}],f:v=>v?'açık':'kapalı'},
@@ -460,6 +471,7 @@ const UP=[
   t:[{v:0,l:'Yok'},{v:1,l:'1 Ünite',c:3900,g:AF_VOL},{v:2,l:'2 Ünite',c:17000,g:450000},{v:3,l:'3 Ünite',c:62000,g:700000}],f:v=>v?v+' ünite · '+(v*20)+' kg/dk':'kilitli'},
  {id:'autofeed',cat:'Otomasyon',n:'Otomatik Yemleme',d:'Kafesler yemi kendisi alır (12 ₺/kg).',t:[{v:0,l:'Manuel'},{v:1,l:'Otomatik',c:11000,g:200000}],f:v=>v?'açık':'kapalı'},
 ];
+UP.forEach(u=>u.t.forEach(t=>{if(t.g&&t.g!==CAGE_VOL&&t.g!==AF_VOL)t.g*=20;}));
 const UPM={};UP.forEach(u=>UPM[u.id]=u);
 const FISH=[
  {id:'sazan',n:'Sazan',a:1.2,b:6,p:38,pull:.55,st:52,df:.16,c:0xb08d57},
@@ -471,17 +483,17 @@ const FISH=[
 ];
 
 /* ═══════════ STATE ═══════════ */
-const SKEY='gol-proto-v3';
+const SKEY='gol-proto-v4';
 function fresh(){return{
  lv:Object.fromEntries(UP.map(u=>[u.id,0])),
  lake:0,money:8,debt:0,buf:0,stock:0,carry:0,valve:60,
- fish:[],cages:[{b:0},{b:0},{b:0}],holds:[0,0,0],
- ts:10,drawn:0,sold:0,fishKg:0,trips:0,steps:0,spill:0,jumps:0,t0:Date.now(),won:false,
+ fish:[],cages:[{b:0},{b:0},{b:0}],holds:[0,0,0],net:[],
+ ts:10,drawn:0,sold:0,fishKg:0,trips:0,steps:0,spill:0,lost:0,jumps:0,cPour:0,cFish:0,cEarn:0,cScoop:0,crys:0,orders:[],ordDone:0,ach:{},mile:0,rain:0,lastSeen:0,t0:Date.now(),won:false,
  set:{sens:110,fov:80,bob:1,spill:1,aud:1}
 };}
 let S=fresh();
 const lv=id=>S.lv[id]||0,tier=id=>UPM[id].t[lv(id)],val=id=>tier(id).v,cap=()=>val('cap');
-function save(){try{localStorage.setItem(SKEY,JSON.stringify(S));}catch(e){}}
+function save(){try{S.lastSeen=Date.now();localStorage.setItem(SKEY,JSON.stringify(S));}catch(e){}}
 function load(){try{const j=JSON.parse(localStorage.getItem(SKEY));if(j&&j.lv){S=Object.assign(fresh(),j);S.set=Object.assign(fresh().set,j.set||{});return true;}}catch(e){}return false;}
 
 /* ═══════════ AUDIO ═══════════ */
@@ -494,7 +506,6 @@ const AU={ctx:null,mg:null,noise:null,fillG:null,pourG:null,on:true,
    const bp=this.ctx.createBiquadFilter();bp.type=type;bp.frequency.value=f;bp.Q.value=q;
    const g=this.ctx.createGain();g.gain.value=0;s.connect(bp);bp.connect(g);g.connect(this.mg);s.start();return g;};
   this.fillG=mk(1000,.7);this.pourG=mk(430,.6);
-  const amb=mk(240,.4,'lowpass');amb.gain.value=.045;
  }catch(e){}},
  res(){if(this.ctx&&this.ctx.state==='suspended')this.ctx.resume();},
  set(on){this.on=on;S.set.aud=on?1:0;if(this.mg)this.mg.gain.setTargetAtTime(on?.8:0,this.ctx.currentTime,.05);
@@ -508,19 +519,19 @@ const AU={ctx:null,mg:null,noise:null,fillG:null,pourG:null,on:true,
   const bp=this.ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=f;bp.Q.value=.8;
   const g=this.ctx.createGain();g.gain.setValueAtTime(v,t0);g.gain.exponentialRampToValueAtTime(.0001,t0+d);
   s.connect(bp);bp.connect(g);g.connect(this.mg);s.start(t0);s.stop(t0+d+.05);}catch(e){}},
- step(wet){wet?this.nz(.13,.1,520):this.nz(.06,.065,190);},
- jump(){this.t(300,520,.11,'sine',.055);this.nz(.07,.045,300);},
- land(h){this.nz(.11,clamp(h*.085,.035,.15),150);this.t(120,70,.1,'sine',.045);},
+ step(){},
+ jump(){},
+ land(){},
  coin(){this.t(880,1320,.1,'triangle',.1);this.t(1320,1760,.14,'sine',.07,.06);},
  up(){[523,659,784,1047].forEach((f,i)=>this.t(f,f,.16,'triangle',.09,i*.055));},
- bad(){this.t(200,90,.2,'sawtooth',.07);this.nz(.18,.075,300);},
- cast(){this.nz(.22,.085,1400);this.t(700,240,.2,'sine',.04);},
- splash(v=1){this.nz(.26,.12*v,620);},
+ bad(){},
+ cast(){},
+ splash(){},
  bite(){this.t(1400,1900,.07,'sine',.11);this.t(1900,1500,.09,'sine',.085,.08);},
- reel(){this.t(300,300,.02,'square',.016);},
+ reel(){},
  caught(){[659,784,988,1319].forEach((f,i)=>this.t(f,f,.2,'triangle',.095,i*.07));},
  win(){[523,659,784,1047,1319,1568].forEach((f,i)=>this.t(f,f,.3,'triangle',.1,i*.13));},
- bird(){this.t(2300,2700,.08,'sine',.024);this.t(2700,2200,.1,'sine',.018,.11);}
+ bird(){}
 };
 
 /* ═══════════ RENDERER ═══════════ */
@@ -533,7 +544,7 @@ renderer.shadowMap.autoUpdate=false;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
 const scene=new THREE.Scene();
 const FOGC=new THREE.Color(0xb9d2cf);
-scene.fog=new THREE.FogExp2(FOGC,.0068);
+scene.fog=new THREE.FogExp2(FOGC,.0034);
 const camera=new THREE.PerspectiveCamera(80,innerWidth/innerHeight,.06,700);
 const yaw=new THREE.Object3D(),pitch=new THREE.Object3D();
 yaw.add(pitch);pitch.add(camera);scene.add(yaw);
@@ -542,7 +553,7 @@ const SUN=new THREE.Vector3(-.42,.58,.62).normalize();
 const sun=new THREE.DirectionalLight(0xffeed2,2.9);
 sun.position.copy(SUN).multiplyScalar(110);sun.castShadow=true;
 sun.shadow.mapSize.set(2048,2048);const shc=sun.shadow.camera;
-shc.left=-70;shc.right=70;shc.top=70;shc.bottom=-70;shc.near=1;shc.far=260;
+shc.left=-88;shc.right=88;shc.top=88;shc.bottom=-88;shc.near=1;shc.far=320;
 sun.shadow.bias=-.0006;sun.shadow.normalBias=.05;scene.add(sun);
 scene.add(new THREE.HemisphereLight(0xbfe0e8,0x40542f,1.3));
 const rimL=new THREE.DirectionalLight(0x8fd8e8,.7);rimL.position.set(60,22,-70);scene.add(rimL);
@@ -553,7 +564,7 @@ function tex(draw,rep=1){const cv=document.createElement('canvas');cv.width=cv.h
 const T_ground=tex(x=>{x.fillStyle='#ffffff';x.fillRect(0,0,256,256);
  for(let i=0;i<5000;i++){const g=rnd(-40,40)|0;x.fillStyle=`rgba(${182+g},${182+g},${174+g},.5)`;x.fillRect(rnd(256),rnd(256),rnd(1,4),rnd(1,4));}
  for(let i=0;i<66;i++){x.strokeStyle=`rgba(122,122,112,${rnd(.05,.15)})`;x.lineWidth=rnd(.6,2);x.beginPath();
-  const a=rnd(TAU),px=rnd(256),py=rnd(256);x.moveTo(px,py);x.lineTo(px+Math.cos(a)*rnd(6,26),py+Math.sin(a)*rnd(6,26));x.stroke();}},70);
+  const a=rnd(TAU),px=rnd(256),py=rnd(256);x.moveTo(px,py);x.lineTo(px+Math.cos(a)*rnd(6,26),py+Math.sin(a)*rnd(6,26));x.stroke();}},120);
 const T_rock=tex(x=>{x.fillStyle='#8e8878';x.fillRect(0,0,256,256);
  for(let i=0;i<3200;i++){const g=rnd(-38,38)|0;x.fillStyle=`rgba(${142+g},${136+g},${120+g},.55)`;x.fillRect(rnd(256),rnd(256),rnd(1,5),rnd(1,5));}
  x.strokeStyle='rgba(70,66,58,.35)';for(let i=0;i<15;i++){x.lineWidth=rnd(.6,2.2);x.beginPath();x.moveTo(rnd(256),rnd(256));
@@ -589,7 +600,7 @@ void main(){float h=clamp(vP.y,-1.,1.);
  gl_FragColor=vec4(c,1.);}`})));
 
 /* ═══════════ TERRAIN ═══════════ */
-const TD=230,TS=256;
+const TD=420,TS=320;
 const tg=new THREE.PlaneGeometry(TD,TD,TS,TS);tg.rotateX(-Math.PI/2);
 const tp=tg.attributes.position,tc=new Float32Array(tp.count*3);
 const cA=new THREE.Color();
@@ -624,12 +635,12 @@ float bedH(vec2 p){
  float dep=${LC.K.toFixed(6)}*(${LC.S.toFixed(3)}*bowl+${LC.P.toFixed(3)}*pool*inside+${LC.S.toFixed(3)}*micro*bowl);
  float bank=${LC.B.toFixed(3)}*pow(max(t-1.,0.),1.4);
  return bank-dep;}`;
-const WS=innerWidth<900?140:210;
+const WS=innerWidth<900?160:260;
 const wg=new THREE.PlaneGeometry(GD,GD,WS,WS);wg.rotateX(-Math.PI/2);
 const WU={uTime:{value:0},uLevel:{value:MINBED},uAmp:{value:1},
  uShal:{value:new THREE.Color(0x63d8cf)},uMid:{value:new THREE.Color(0x1a8fa8)},uDeep:{value:new THREE.Color(0x06303f)},
  uSky:{value:new THREE.Color(0xa9d8e4)},uSun:{value:new THREE.Color(0xfff3d4)},uSunDir:{value:SUN},
- uFog:{value:FOGC},uFogD:{value:.0068},uOp:{value:.9}};
+ uFog:{value:FOGC},uFogD:{value:.0034},uOp:{value:.9}};
 const water=new THREE.Mesh(wg,new THREE.ShaderMaterial({uniforms:WU,transparent:true,depthWrite:false,side:THREE.DoubleSide,
 vertexShader:bedGLSL+`
 uniform float uTime,uLevel,uAmp;varying vec3 vW,vN;varying float vD,vFog;
@@ -688,7 +699,8 @@ function cyl(rt,rb,h,m,x,y,z,p=scene,seg=16){const o=new THREE.Mesh(new THREE.Cy
 const COL=[];const addCol=(x,z,r)=>COL.push({x,z,r});
 const onLand=(ang,dist)=>{const r=shoreR(ang)+dist;return{x:Math.cos(ang)*r,z:Math.sin(ang)*r,r,ang};};
 const DOCK_ANG=Math.PI/2,DOCK_SHORE=shoreR(DOCK_ANG);
-const DOCK_Z0=DOCK_SHORE+2.5,DOCK_Z1=DOCK_SHORE-17,DECK_Y=.62;
+sun.target.position.set(0,0,DOCK_SHORE-8);sun.position.copy(sun.target.position).addScaledVector(SUN,110);scene.add(sun.target);
+const DOCK_Z0=DOCK_SHORE+2.5,DOCK_Z1=DOCK_SHORE-32,DECK_Y=.62;
 const CAMP_ANG=DOCK_ANG+.34;
 /* structures keep nature away */
 const CLEAR=[];
@@ -744,15 +756,6 @@ for(let i=0;i<4;i++){const s=box(.055,.76,.055,MAT.brass,0,1.42,.46,PG);s.rotati
 cyl(.18,.18,.07,MAT.metal,.5,1.3,.3,PG,14).rotation.x=Math.PI/2;
 cyl(.09,.09,.7,MAT.metal,-.42,1.1,0,PG,10).rotation.z=.4;
 addCol(PP.x,PP.z,1.35);
-const pipes=new THREE.Group();pipes.visible=false;scene.add(pipes);
-function pipeRun(pts,r=.13){const c=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(p.x,p.y,p.z)));
- const m=new THREE.Mesh(new THREE.TubeGeometry(c,40,r,7,false),MAT.metal);m.castShadow=true;pipes.add(m);}
-{const a=new THREE.Vector3(SP.x,terrainH(SP.x,SP.z)+.6,SP.z),b=new THREE.Vector3(PP.x,terrainH(PP.x,PP.z)+1.1,PP.z),
- c=new THREE.Vector3(BP.x,terrainH(BP.x,BP.z)+1.5,BP.z),d=new THREE.Vector3(0,DECK_Y-.2,DOCK_Z0);
- pipeRun([a,a.clone().lerp(b,.5).setY(a.y+.3),b]);
- pipeRun([b,b.clone().lerp(c,.5).setY(b.y+.3),c],.11);
- pipeRun([b,b.clone().lerp(d,.4).setY(b.y-.2),d],.11);}
-
 /* ═══════════ CART & SIGN ═══════════ */
 const CP=onLand(DOCK_ANG+.52,11);clearZone(CP.x,CP.z,7);
 const CG=new THREE.Group();CG.position.set(CP.x,terrainH(CP.x,CP.z),CP.z);CG.rotation.y=DOCK_ANG+.52-Math.PI/2+.4;scene.add(CG);
@@ -786,11 +789,11 @@ clearZone(SPAWN.x,SPAWN.z,9);
 
 /* ═══════════ DOCK ═══════════ */
 const DG=new THREE.Group();DG.visible=false;scene.add(DG);
-for(let i=0;i<20;i++){const z=DOCK_Z0-i*(DOCK_Z0-DOCK_Z1)/19;
+for(let i=0;i<40;i++){const z=DOCK_Z0-i*(DOCK_Z0-DOCK_Z1)/39;
  const p=box(2.5,.11,.86,MAT.wood,0,DECK_Y,z,DG);p.rotation.y=rnd(-.012,.012);
  if(i%3===0)for(const dx of[-1.08,1.08]){const b=bed(dx,z);cyl(.1,.12,DECK_Y-b+.3,MAT.woodDark,dx,(DECK_Y+b)/2-.1,z,DG,8);}}
 for(const dx of[-1.2,1.2]){box(.08,.08,DOCK_Z0-DOCK_Z1,MAT.woodDark,dx,DECK_Y+.95,(DOCK_Z0+DOCK_Z1)/2,DG);
- for(let i=0;i<5;i++){const z=lerp(DOCK_Z0,DOCK_Z1,i/4);cyl(.05,.05,.95,MAT.woodDark,dx,DECK_Y+.5,z,DG,6);}}
+ for(let i=0;i<9;i++){const z=lerp(DOCK_Z0,DOCK_Z1,i/8);cyl(.05,.05,.95,MAT.woodDark,dx,DECK_Y+.5,z,DG,6);}}
 const dLamp=new THREE.Mesh(new THREE.SphereGeometry(.13,10,8),new THREE.MeshBasicMaterial({color:0xffd98a}));
 dLamp.position.set(1.2,DECK_Y+1.25,DOCK_Z1+.4);DG.add(dLamp);
 const dLight=new THREE.PointLight(0xffc46b,13,17,2);dLight.position.copy(dLamp.position);DG.add(dLight);
@@ -804,35 +807,36 @@ function platformH(x,z){
 const cageG=new THREE.Group();cageG.visible=false;scene.add(cageG);
 const cageMeshes=[],CAGE_POS=[];
 for(let i=0;i<3;i++){
- const ang=DOCK_ANG+(i-1)*.30,r=DOCK_SHORE-11.5;
+ const ang=DOCK_ANG+(i-1)*.30,r=DOCK_SHORE-24;
  const x=Math.cos(ang)*r,z=Math.sin(ang)*r;CAGE_POS.push({x,z});
  const g=new THREE.Group();g.position.set(x,0,z);
  const ring=new THREE.Mesh(new THREE.TorusGeometry(2.1,.12,8,24),MAT.wood);ring.rotation.x=Math.PI/2;g.add(ring);
  const net=new THREE.Mesh(new THREE.CylinderGeometry(2.02,1.65,1.9,20,1,true),
   new THREE.MeshStandardMaterial({color:0x35603a,roughness:.95,transparent:true,opacity:.42,side:THREE.DoubleSide}));
- net.position.y=-.95;g.add(net);
+ net.position.y=-.95;g.add(net);g.userData.net=net;
  for(let k=0;k<4;k++){const a=k/4*TAU+.4;box(.15,.55,.15,MAT.wood,Math.cos(a)*2.1,.22,Math.sin(a)*2.1,g);}
  cageG.add(g);cageMeshes.push(g);
 }
 const afG=new THREE.Group();afG.visible=false;scene.add(afG);
 const afMeshes=[],AF_POS=[];
 for(let i=0;i<3;i++){
- const ang=DOCK_ANG+(i-1)*.52+.26,r=DOCK_SHORE-6;
+ const ang=DOCK_ANG+(i-1)*.52+.26,r=DOCK_SHORE-13;
  const x=Math.cos(ang)*r,z=Math.sin(ang)*r;AF_POS.push({x,z});
  const g=new THREE.Group();g.position.set(x,0,z);
  for(const dx of[-.7,.7])for(const dz of[-.7,.7])cyl(.08,.09,2.6,MAT.woodDark,dx,-1.1,dz,g,6);
  box(1.7,.14,1.7,MAT.wood,0,.16,0,g);
  box(1.5,.85,1.5,MAT.woodDark,0,.65,0,g);
  box(1.8,.12,1.8,MAT.wood,0,1.12,0,g);
- const arm=box(.09,1.5,.09,MAT.metal,.55,1.85,0,g);arm.rotation.z=-.32;
+ const arm=box(.09,1.5,.09,MAT.metal,.55,1.85,0,g);arm.rotation.z=-.32;g.userData.arm=arm;
  cyl(.34,.4,.48,MAT.wood,-.42,1.4,0,g,12);
  const lt=new THREE.Mesh(new THREE.SphereGeometry(.08,8,6),new THREE.MeshBasicMaterial({color:0xa3e635}));lt.position.set(.55,2.5,0);g.add(lt);
+ g.userData.light=lt;
  afG.add(g);afMeshes.push(g);
 }
 
 /* ═══════════ NATURE (kept out of camp & spawn) ═══════════ */
 const dm=new THREE.Object3D();
-{const g=new THREE.DodecahedronGeometry(1,0),N=110;
+{const g=new THREE.DodecahedronGeometry(1,0),N=200;
  const im=new THREE.InstancedMesh(g,MAT.rock,N);im.castShadow=im.receiveShadow=true;
  let n=0,guard=0;
  while(n<N&&guard++<5000){const a=rnd(TAU),r=shoreR(a)+rnd(-5,9);
@@ -844,11 +848,11 @@ const dm=new THREE.Object3D();
   if(s>.8)addCol(x,z,s*.72);}
  im.count=n;scene.add(im);}
 {const rg=new THREE.CylinderGeometry(.018,.05,1.7,4);rg.translate(0,.85,0);
- const im=new THREE.InstancedMesh(rg,MAT.reed,1500);
+ const im=new THREE.InstancedMesh(rg,MAT.reed,2800);
  const cg=new THREE.CylinderGeometry(.055,.07,.3,6);cg.translate(0,1.72,0);
  const cm=new THREE.InstancedMesh(cg,MAT.cattail,420);
  let n=0,cn=0,guard=0;
- while(n<1500&&guard++<14000){const a=rnd(TAU),r=shoreR(a)+rnd(-3.4,1.6);
+ while(n<2800&&guard++<30000){const a=rnd(TAU),r=shoreR(a)+rnd(-3.4,1.6);
   const x=Math.cos(a)*r,z=Math.sin(a)*r,b=bed(x,z);
   if(b<-.55||b>.4)continue;
   const s=rnd(.65,1.5);dm.position.set(x,Math.min(b,terrainH(x,z)),z);
@@ -858,9 +862,9 @@ const dm=new THREE.Object3D();
  im.count=n;cm.count=cn;scene.add(im);scene.add(cm);}
 {const pg=new THREE.PlaneGeometry(.62,.62);pg.translate(0,.31,0);
  const gm=new THREE.MeshStandardMaterial({map:T_grass,alphaTest:.42,side:THREE.DoubleSide,roughness:.95,color:0x93b45c});
- const im=new THREE.InstancedMesh(pg,gm,2400);
+ const im=new THREE.InstancedMesh(pg,gm,4500);
  let n=0,guard=0;
- while(n<2400&&guard++<22000){const a=rnd(TAU),r=shoreR(a)+rnd(.5,26);
+ while(n<4500&&guard++<40000){const a=rnd(TAU),r=shoreR(a)+rnd(.5,40);
   const x=Math.cos(a)*r,z=Math.sin(a)*r,h=terrainH(x,z);
   if(h<.12||h>9||slopeAt(x,z)>.6)continue;
   const s=rnd(.7,1.6);dm.position.set(x,h-.03,z);dm.scale.set(s,s*rnd(.8,1.4),s);
@@ -869,16 +873,16 @@ const dm=new THREE.Object3D();
 {const trunkG=new THREE.CylinderGeometry(.16,.3,1,7);trunkG.translate(0,.5,0);
  const pineG=new THREE.ConeGeometry(1,1,9);pineG.translate(0,.5,0);
  const leafG=new THREE.SphereGeometry(1,9,7);
- const N=200;
+ const N=440;
  const ti=new THREE.InstancedMesh(trunkG,MAT.trunk,N);ti.castShadow=true;
  const pi=new THREE.InstancedMesh(pineG,MAT.leaf,N);pi.castShadow=true;
  const li=new THREE.InstancedMesh(leafG,MAT.leaf2,N*3);li.castShadow=true;
  const bi=new THREE.InstancedMesh(trunkG,MAT.birch,N);bi.castShadow=true;
  let tn=0,pn=0,ln=0,bn=0,guard=0;
- while(tn<N&&guard++<16000){
-  const a=rnd(TAU),r=shoreR(a)+rnd(9,84);
+ while(tn<N&&guard++<40000){
+  const a=rnd(TAU),r=shoreR(a)+rnd(9,120);
   const x=Math.cos(a)*r,z=Math.sin(a)*r,h=terrainH(x,z);
-  if(h<.5||inClear(x,z,3))continue;
+  if(h<.5||Math.hypot(x,z)>195||inClear(x,z,3))continue;
   if(slopeAt(x,z)>.72)continue;
   const H=rnd(5,12),tw=rnd(.7,1.3);
   dm.position.set(x,h,z);dm.scale.set(tw,H*.45,tw);dm.rotation.set(0,rnd(TAU),0);dm.updateMatrix();
@@ -914,15 +918,15 @@ function refreshPads(lvl){
  padIM.instanceMatrix.needsUpdate=true;}
 /* mist */
 const mistG=new THREE.Group();scene.add(mistG);const mists=[];
-for(let i=0;i<7;i++){const m=new THREE.Mesh(new THREE.PlaneGeometry(rnd(24,44),rnd(5,9)),
+for(let i=0;i<12;i++){const m=new THREE.Mesh(new THREE.PlaneGeometry(rnd(50,90),rnd(10,18)),
  new THREE.MeshBasicMaterial({color:0xdfeef0,transparent:true,opacity:.08,depthWrite:false,blending:THREE.AdditiveBlending,side:THREE.DoubleSide}));
- m.rotation.x=-Math.PI/2;m.position.set(rnd(-26,26),.6,rnd(-20,30));mistG.add(m);
+ m.rotation.x=-Math.PI/2;m.position.set(rnd(-60,60),.6,rnd(-50,70));mistG.add(m);
  mists.push({m,ph:rnd(TAU),sp:rnd(.1,.3),bx:m.position.x,bz:m.position.z});}
 /* birds */
 const birdG=new THREE.Group();scene.add(birdG);const birds=[];
 for(let i=0;i<7;i++){const g=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-.6,0,0),new THREE.Vector3(0,.18,0),new THREE.Vector3(.6,0,0)]);
  const m=new THREE.Line(g,new THREE.LineBasicMaterial({color:0x2c3a34,transparent:true,opacity:.5}));
- birdG.add(m);birds.push({m,a:rnd(TAU),r:rnd(34,72),y:rnd(20,40),sp:rnd(.06,.14),ph:rnd(TAU)});}
+ birdG.add(m);birds.push({m,a:rnd(TAU),r:rnd(60,140),y:rnd(20,40),sp:rnd(.06,.14),ph:rnd(TAU)});}
 
 /* ═══════════ FISH ═══════════ */
 const fishGeo=new THREE.SphereGeometry(1,10,7);fishGeo.scale(1,.42,.34);
@@ -940,7 +944,7 @@ function pts(n,c,sz,op=1,blend=THREE.AdditiveBlending){
  o.frustumCulled=false;scene.add(o);return{o,p:g.attributes.position,d:[]};}
 const P_drop=pts(300,0xb6ecf7,.07,.95),P_splash=pts(260,0xdff6ff,.085,.9),
  P_dust=pts(160,0xc9b894,.09,.55,THREE.NormalBlending),P_spark=pts(220,0xffd166,.1,1),P_leaf=pts(110,0xc8d89a,.06,.4);
-for(let i=0;i<110;i++)P_leaf.d.push({x:rnd(-50,50),y:rnd(.6,11),z:rnd(-20,55),vx:rnd(-.25,.25),vy:rnd(.03,.16),ph:rnd(TAU),life:1,g:0});
+for(let i=0;i<110;i++)P_leaf.d.push({x:rnd(-60,60),y:rnd(.6,11),z:rnd(40,130),vx:rnd(-.25,.25),vy:rnd(.03,.16),ph:rnd(TAU),life:1,g:0});
 function emit(P,x,y,z,vx,vy,vz,life,g=9){if(P.d.length>=P.p.count)return;P.d.push({x,y,z,vx,vy,vz,life,max:life,g});}
 function updP(P,dt){const a=P.p.array;
  for(let i=P.d.length-1;i>=0;i--){const d=P.d[i];d.life-=dt;if(d.life<=0){P.d.splice(i,1);continue;}
@@ -975,6 +979,347 @@ function makeStream(segs=18){
   g.attributes.position.needsUpdate=true;g.computeBoundingSphere();}};
 }
 const fillStream=makeStream(16),pourStream=makeStream(20);
+
+/* ═══════════ WATER PHYSICS (parçacık akışkan · yükseklik haritası) ═══════════ */
+const WMAX=1800,WG=9.8,HALF=TD/2,HC=1,HN=Math.round(TD/HC)+1,WCS=.3;
+const hg=new Float32Array(HN*HN);
+for(let j=0;j<HN;j++)for(let i=0;i<HN;i++)hg[j*HN+i]=terrainH(-HALF+i*HC,-HALF+j*HC);
+function hAt(x,z){
+ const fx=(x+HALF)/HC,fz=(z+HALF)/HC;let i=Math.floor(fx),j=Math.floor(fz);
+ if(i<0)i=0;if(j<0)j=0;if(i>HN-2)i=HN-2;if(j>HN-2)j=HN-2;
+ const tx=clamp(fx-i,0,1),tz=clamp(fz-j,0,1);
+ const a=hg[j*HN+i],b=hg[j*HN+i+1],c=hg[(j+1)*HN+i],d=hg[(j+1)*HN+i+1];
+ return lerp(lerp(a,b,tx),lerp(c,d,tx),tz);
+}
+let NX=0,NY=1,NZ=0,ONP=false;
+function surfN(x,z){
+ const h=hAt(x,z),p=platformH(x,z);
+ if(p>h){NX=0;NY=1;NZ=0;ONP=true;return p;}
+ ONP=false;const e=.7,gx=(hAt(x+e,z)-hAt(x-e,z))/(2*e),gz=(hAt(x,z+e)-hAt(x,z-e))/(2*e);
+ const l=Math.hypot(gx,gz,1);NX=-gx/l;NY=1/l;NZ=-gz/l;return h;
+}
+const WX=new Float32Array(WMAX),WY=new Float32Array(WMAX),WZ=new Float32Array(WMAX),
+ WVX=new Float32Array(WMAX),WVY=new Float32Array(WMAX),WVZ=new Float32Array(WMAX),
+ WVOL=new Float32Array(WMAX),WRT=new Float32Array(WMAX),WNX=new Float32Array(WMAX),WNY=new Float32Array(WMAX),WNZ=new Float32Array(WMAX),WGR=new Uint8Array(WMAX),WP=new Uint8Array(WMAX);
+let wn=0;
+const wGeoG=new THREE.PlaneGeometry(2,2);wGeoG.rotateX(-Math.PI/2);
+const wTex=(()=>{const cv=document.createElement('canvas');cv.width=cv.height=64;const x=cv.getContext('2d');
+ const g=x.createRadialGradient(32,32,2,32,32,31);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.6,'rgba(255,255,255,.8)');g.addColorStop(1,'rgba(255,255,255,0)');
+ x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(cv);})();
+const wIM=new THREE.InstancedMesh(wGeoG,new THREE.MeshBasicMaterial({map:wTex,color:0x2fb4f2,transparent:true,opacity:.95,toneMapped:false,depthWrite:false,side:THREE.DoubleSide,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}),WMAX);
+wIM.frustumCulled=false;wIM.count=0;wIM.renderOrder=5;scene.add(wIM);
+const wHi=new THREE.InstancedMesh(wGeoG,new THREE.MeshBasicMaterial({map:wTex,color:0x9fe3ff,transparent:true,opacity:.3,toneMapped:false,depthWrite:false,side:THREE.DoubleSide}),WMAX);
+wHi.frustumCulled=false;wHi.count=0;wHi.renderOrder=6;wHi.visible=false;scene.add(wHi);
+const wAir=new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1,1),new THREE.MeshBasicMaterial({color:0x8fdcff,transparent:true,opacity:.9,toneMapped:false,depthWrite:false}),WMAX);
+wAir.frustumCulled=false;wAir.count=0;wAir.renderOrder=5;scene.add(wAir);
+const M4=new THREE.Matrix4(),VA=new THREE.Vector3(),VB=new THREE.Vector3(),VC=new THREE.Vector3(),AIMO=new THREE.Vector3();
+function aimWater(){
+ camera.getWorldDirection(DIRW);camera.getWorldPosition(AIMO);
+ let best=-1,bt=1e9;
+ for(let i=0;i<wn;i++){if(!WGR[i])continue;
+  const rx=WX[i]-AIMO.x,ry=WY[i]-AIMO.y,rz=WZ[i]-AIMO.z,tt=rx*DIRW.x+ry*DIRW.y+rz*DIRW.z;
+  if(tt<.3||tt>5.5||tt>=bt)continue;
+  const px=rx-DIRW.x*tt,py=ry-DIRW.y*tt,pz=rz-DIRW.z*tt,rd=wRad(WVOL[i])*2.2+.3;
+  if(px*px+py*py+pz*pz<rd*rd){bt=tt;best=i;}}
+ return best<0?null:{x:WX[best],y:WY[best],z:WZ[best]};
+}
+function scoopWater(a,budget){
+ let got=0;
+ for(let i=wn-1;i>=0&&budget>1e-6;i--){
+  const dx=WX[i]-a.x,dy=WY[i]-a.y,dz=WZ[i]-a.z;
+  if(dx*dx+dy*dy+dz*dz>2.25)continue;
+  const take=Math.min(WVOL[i],budget);
+  if(Math.random()<.25)emit(P_splash,WX[i],WY[i]+.05,WZ[i],rnd(-.3,.3),rnd(.4,1),rnd(-.3,.3),.3,8);
+  got+=take;budget-=take;WVOL[i]-=take;
+  if(WVOL[i]<=1e-5)wKill(i);}
+ return got;
+}
+const wHead=new Int32Array(4096).fill(-1),wNext=new Int32Array(WMAX);
+const wk=(a,b)=>(((a*73856093)^(b*19349663))>>>0)&4095;
+const wRad=v=>clamp(Math.cbrt(v)*.09,.12,.36);
+function wKill(i){wn--;if(i!==wn){WX[i]=WX[wn];WY[i]=WY[wn];WZ[i]=WZ[wn];WVX[i]=WVX[wn];WVY[i]=WVY[wn];WVZ[i]=WVZ[wn];WVOL[i]=WVOL[wn];WRT[i]=WRT[wn];WNX[i]=WNX[wn];WNY[i]=WNY[wn];WNZ[i]=WNZ[wn];WGR[i]=WGR[wn];WP[i]=WP[wn];}}
+function wAdd(x,y,z,vx,vy,vz,vol,pf){
+ if(wn>=WMAX){let k=-1,m=-1;for(let i=0;i<wn;i++)if(WRT[i]>m){m=WRT[i];k=i;}
+  if(k<0)return false;S.lost+=WVOL[k];wKill(k);}
+ const i=wn++;WX[i]=x;WY[i]=y;WZ[i]=z;WVX[i]=vx;WVY[i]=vy;WVZ[i]=vz;WVOL[i]=vol;WRT[i]=0;WGR[i]=0;WP[i]=pf?1:0;WNX[i]=0;WNY[i]=1;WNZ[i]=0;return true;
+}
+const DIRW=new THREE.Vector3();let pourAcc=0,pourVol=0,swCd=0;
+function emitPour(v,dt){
+ pourVol+=v;pourAcc+=dt*90;const n=Math.floor(pourAcc);if(n<1)return;
+ pourAcc-=n;const pv=pourVol/n;pourVol=0;
+ VP.lip.getWorldPosition(LIP_W);camera.getWorldDirection(DIRW);
+ for(let k=0;k<n;k++){const sp=4.4+rnd(-.3,.3);
+  if(!wAdd(LIP_W.x+rnd(-.03,.03),LIP_W.y+rnd(-.02,.02),LIP_W.z+rnd(-.03,.03),
+   DIRW.x*sp+rnd(-.2,.2),DIRW.y*sp+.5+rnd(-.1,.2),DIRW.z*sp+rnd(-.2,.2),pv))S.lost+=pv;}
+}
+function wSeparate(){
+ wHead.fill(-1);
+ for(let i=0;i<wn;i++){const k=wk(Math.floor(WX[i]/WCS),Math.floor(WZ[i]/WCS));wNext[i]=wHead[k];wHead[k]=i;}
+ for(let i=0;i<wn;i++){
+  const ix=Math.floor(WX[i]/WCS),iz=Math.floor(WZ[i]/WCS),ri=wRad(WVOL[i]);let chk=0;
+  for(let a=-1;a<=1;a++)for(let b=-1;b<=1;b++){
+   for(let j=wHead[wk(ix+a,iz+b)];j>=0;j=wNext[j]){
+    if(j<=i)continue;if(++chk>36)break;
+    const dx=WX[j]-WX[i],dy=WY[j]-WY[i],dz=WZ[j]-WZ[i],d2=dx*dx+dy*dy+dz*dz,md=(ri+wRad(WVOL[j]))*.8;
+    if(d2<1e-8){WX[j]+=rnd(-.02,.02);WZ[j]+=rnd(-.02,.02);continue;}
+    if(d2<md*md){const d=Math.sqrt(d2),ov=(md-d)/d*.5,ux=dx*ov,uy=dy*ov*.5,uz=dz*ov;
+     WX[i]-=ux;WY[i]-=uy;WZ[i]-=uz;WX[j]+=ux;WY[j]+=uy;WZ[j]+=uz;
+     WVX[i]+=(WVX[j]-WVX[i])*.06;WVZ[i]+=(WVZ[j]-WVZ[i])*.06;WVX[j]+=(WVX[i]-WVX[j])*.06;WVZ[j]+=(WVZ[i]-WVZ[j])*.06;}
+   }}}
+}
+function waterStep(dt){
+ swCd-=dt;rpCd-=dt;
+ if(!wn){wIM.count=0;wAir.count=0;wHi.count=0;return;}
+ const lvl=S.lake>1?lakeAt(S.lake).lvl:-1e9,SUB=2,h=dt/SUB;
+ for(let s=0;s<SUB;s++){
+  for(let i=wn-1;i>=0;i--){
+   let vx=WVX[i],vy=WVY[i]-WG*h,vz=WVZ[i];
+   let x=WX[i]+vx*h,y=WY[i]+vy*h,z=WZ[i]+vz*h;
+   if(x>HALF-3||x<-HALF+3||z>HALF-3||z<-HALF+3){S.lost+=WVOL[i];wKill(i);continue;}
+   const rr=wRad(WVOL[i])*.55,sf=surfN(x,z);
+   if(y-rr<=sf){
+    if(sf<lvl+.1||(WRT[i]>.35&&sf<-.05)){
+     addLake(WVOL[i]);S.cPour+=WVOL[i];
+     if(rpCd<=0){rip(x,Math.max(sf,lvl)+.03,z);rpCd=.07;}
+     for(let q=0;q<3;q++)emit(P_splash,x+rnd(-.1,.1),Math.max(sf,lvl)+.03,z+rnd(-.1,.1),rnd(-.7,.7),rnd(.8,2),rnd(-.7,.7),.55,8);
+     if(swCd<=0&&vy<-3){AU.splash(.35);swCd=.12;}
+     wKill(i);continue;}
+    if(!WGR[i]&&!(sf<lvl+.1)&&Math.random()<.5)stamp(x,sf,z,NX,NY,NZ);
+    y=sf+rr;WGR[i]=1;WNX[i]=NX;WNY[i]=NY;WNZ[i]=NZ;
+    const vn=vx*NX+vy*NY+vz*NZ;
+    if(vn<0){
+     if(-vn>3&&Math.random()<.35)emit(P_splash,x,sf+.05,z,rnd(-.8,.8),-vn*.25,rnd(-.8,.8),.35,8);
+     const k=1.25*vn;vx-=k*NX;vy-=k*NY;vz-=k*NZ;}
+    const fr=Math.exp(-1.8*h);vx*=fr;vy*=fr;vz*=fr;
+    if(ONP)vx+=(x>0?1:-1)*2.5*h;
+    if(vx*vx+vy*vy+vz*vz<.05)WRT[i]+=h;else WRT[i]=Math.max(0,WRT[i]-h*3);
+    if(WRT[i]>(WP[i]?120:45)&&sf>=0){S.lost+=WVOL[i];wKill(i);continue;}
+   }
+   if(y-rr>sf+.03)WGR[i]=0;
+   WX[i]=x;WY[i]=y;WZ[i]=z;WVX[i]=vx;WVY[i]=vy;WVZ[i]=vz;
+  }
+  wSeparate();
+ }
+ let ng=0,na=0,nh=0;
+ for(let i=0;i<wn;i++){
+  const r=wRad(WVOL[i]);let sc=1;{const L0=WP[i]?120:45;if(WRT[i]>L0-5)sc=clamp((L0-WRT[i])/5,0,1);}
+  let tx=WVX[i],ty=WVY[i],tz=WVZ[i];const sp=Math.hypot(tx,ty,tz);
+  if(WGR[i]){
+   const nx=WNX[i],ny=WNY[i],nz=WNZ[i],d=tx*nx+ty*ny+tz*nz;tx-=nx*d;ty-=ny*d;tz-=nz*d;
+   let tl=Math.hypot(tx,ty,tz);if(tl<1e-3){tx=ny;ty=-nx;tz=0;tl=Math.hypot(tx,ty,tz)||1;}
+   tx/=tl;ty/=tl;tz/=tl;
+   const bx=ty*nz-tz*ny,by=tz*nx-tx*nz,bz=tx*ny-ty*nx,R=Math.max(r*3.6,.34)*sc*(1+Math.min(WRT[i],4)*.1),sx=R*(1+Math.min(sp*.3,1.5));
+   VA.set(tx*sx,ty*sx,tz*sx);VB.set(nx,ny,nz);VC.set(bx*R,by*R,bz*R);
+   M4.makeBasis(VA,VB,VC);M4.setPosition(WX[i]+nx*.14,WY[i]-r*.55+ny*.14,WZ[i]+nz*.14);
+   wIM.setMatrixAt(ng++,M4);
+   VA.multiplyScalar(.48);VC.multiplyScalar(.48);M4.makeBasis(VA,VB,VC);M4.setPosition(WX[i]+nx*.16,WY[i]-r*.55+ny*.16,WZ[i]+nz*.16);wHi.setMatrixAt(nh++,M4);
+  }else{
+   if(sp>.1){tx/=sp;ty/=sp;tz/=sp;}else{tx=1;ty=0;tz=0;}
+   let ux=-tz,uy=0,uz=tx,ul=Math.hypot(ux,uz);if(ul<1e-3){ux=1;uz=0;ul=1;}ux/=ul;uz/=ul;
+   const wx=ty*uz-tz*uy,wy=tz*ux-tx*uz,wz=tx*uy-ty*ux,L=r*(1+Math.min(sp*.22,2.2))*sc,W=r*1.15*sc;
+   VA.set(tx*L,ty*L,tz*L);VB.set(ux*W,uy*W,uz*W);VC.set(wx*W,wy*W,wz*W);
+   M4.makeBasis(VA,VB,VC);M4.setPosition(WX[i],WY[i],WZ[i]);
+   wAir.setMatrixAt(na++,M4);
+  }}
+ wIM.count=ng;wAir.count=na;wHi.count=nh;wIM.instanceMatrix.needsUpdate=true;wAir.instanceMatrix.needsUpdate=true;wHi.instanceMatrix.needsUpdate=true;
+}
+
+/* ═══════════ DÖNÜM NOKTALARI ═══════════ */
+const MILES=[.05,.1,.25,.5,.75,.9];let mileT=0;
+function mileTick(dt){
+ mileT-=dt;if(mileT>0)return;mileT=1;
+ while(S.mile<MILES.length&&S.lake>=GOAL*MILES[S.mile]){
+  const m=MILES[S.mile++],b=Math.round(m*100*300);
+  S.money+=b;AU.win();toast('Dönüm noktası: gölün %'+Math.round(m*100)+' doldu · +'+M(b),'gold');
+  for(let i=0;i<110;i++)emit(P_spark,yaw.position.x+rnd(-6,6),yaw.position.y+rnd(0,3),yaw.position.z+rnd(-6,6),rnd(-2,2),rnd(2,6),rnd(-2,2),rnd(1.2,2.2),4);}
+}
+
+/* ═══════════ SU İZLERİ: ıslak leke · dalga halkası · yere nişan ═══════════ */
+let spAcc=0,spT=0,rpCd=0;
+const STMAX=220,STX=new Float32Array(STMAX),STY=new Float32Array(STMAX),STZ=new Float32Array(STMAX),
+ STNX=new Float32Array(STMAX),STNY=new Float32Array(STMAX),STNZ=new Float32Array(STMAX),STS=new Float32Array(STMAX),STA=new Float32Array(STMAX).fill(-1);
+let stI=0;
+const stIM=new THREE.InstancedMesh(wGeoG,new THREE.MeshBasicMaterial({map:wTex,color:0x1b6fae,transparent:true,opacity:.8,toneMapped:false,depthWrite:false,side:THREE.DoubleSide,polygonOffset:true,polygonOffsetFactor:-1.5,polygonOffsetUnits:-1.5}),STMAX);
+stIM.frustumCulled=false;stIM.count=0;stIM.renderOrder=4;scene.add(stIM);
+function stamp(x,y,z,nx,ny,nz){
+ for(let k=1;k<=24;k++){const j=(stI-k+STMAX*2)%STMAX;
+  if(STA[j]<0)continue;const dx=STX[j]-x,dz=STZ[j]-z;
+  if(dx*dx+dz*dz<.09){STS[j]=Math.min(1.5,STS[j]+.04);STA[j]=Math.min(STA[j],2);return;}}
+ const j=stI;stI=(stI+1)%STMAX;
+ STX[j]=x;STY[j]=y;STZ[j]=z;STNX[j]=nx;STNY[j]=ny;STNZ[j]=nz;STS[j]=.45;STA[j]=0;
+}
+const SV1=new THREE.Vector3(),SV2=new THREE.Vector3(),SV3=new THREE.Vector3(),SM=new THREE.Matrix4();
+function stainTick(dt){
+ let c=0;
+ for(let j=0;j<STMAX;j++){if(STA[j]<0)continue;
+  STA[j]+=dt;if(STA[j]>30){STA[j]=-1;continue;}
+  const a=STA[j],s=STS[j]*Math.min(a/.3,1)*(1-clamp((a-22)/8,0,1));
+  const nx=STNX[j],ny=STNY[j],nz=STNZ[j];
+  let tx=ny,ty=-nx,tz=0;const tl=Math.hypot(tx,ty);if(tl<1e-3){tx=1;ty=0;}else{tx/=tl;ty/=tl;}
+  const bx=ty*nz-tz*ny,by=tz*nx-tx*nz,bz=tx*ny-ty*nx;
+  SV1.set(tx*s,ty*s,tz*s);SV2.set(nx,ny,nz);SV3.set(bx*s,by*s,bz*s);
+  SM.makeBasis(SV1,SV2,SV3);SM.setPosition(STX[j]+nx*.1,STY[j]+ny*.1,STZ[j]+nz*.1);stIM.setMatrixAt(c++,SM);}
+ stIM.count=c;stIM.instanceMatrix.needsUpdate=true;
+}
+const RPN=22,rps=[],fms=[],rgeo=new THREE.RingGeometry(.5,1,32),fgeo=new THREE.CircleGeometry(1,24);rgeo.rotateX(-Math.PI/2);fgeo.rotateX(-Math.PI/2);
+for(let i=0;i<RPN;i++){
+ const m=new THREE.Mesh(rgeo,new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:0,toneMapped:false,depthWrite:false,side:THREE.DoubleSide}));
+ m.visible=false;m.renderOrder=7;scene.add(m);rps.push({m,a:9});
+ const f=new THREE.Mesh(fgeo,new THREE.MeshBasicMaterial({color:0xbdeeff,transparent:true,opacity:0,toneMapped:false,depthWrite:false,side:THREE.DoubleSide}));
+ f.visible=false;f.renderOrder=8;scene.add(f);fms.push({m:f,a:9});}
+let rpI=0;
+function rip(x,y,z){const i=rpI++%RPN,r=rps[i],f=fms[i];
+ r.a=0;r.m.position.set(x,y+.02,z);r.m.visible=true;
+ f.a=0;f.m.position.set(x+rnd(-.08,.08),y+.04,z+rnd(-.08,.08));f.m.visible=true;}
+function rippleTick(dt){
+ for(const r of rps){if(!r.m.visible)continue;r.a+=dt;const k=r.a/1.5;
+  if(k>=1){r.m.visible=false;continue;}r.m.scale.setScalar(.2+k*2.1);r.m.material.opacity=(1-k)*(1-k)*.95;}
+ for(const f of fms){if(!f.m.visible)continue;f.a+=dt;const k=f.a/1.3;
+  if(k>=1){f.m.visible=false;continue;}f.m.scale.setScalar(.3+Math.sin(k*Math.PI*.5)*.75);f.m.material.opacity=Math.pow(1-k,1.3)*.9;}
+}
+const GH=new THREE.Vector3();
+function groundRay(maxD){
+ camera.getWorldPosition(PV);camera.getWorldDirection(PD);let tp=.5;
+ for(let t=.5;t<maxD;t+=.3){
+  const x=PV.x+PD.x*t,y=PV.y+PD.y*t,z=PV.z+PD.z*t;
+  if(y<gH(x,z)){let a=tp,b=t;
+   for(let k=0;k<6;k++){const m=(a+b)/2;if(PV.y+PD.y*m<gH(PV.x+PD.x*m,PV.z+PD.z*m))b=m;else a=m;}
+   const hx=PV.x+PD.x*b,hz=PV.z+PD.z*b;return GH.set(hx,Math.max(gH(hx,hz),NET.lvl)+.03,hz);}
+  tp=t;}
+ return null;
+}
+
+/* ═══════════ ELLE BORU DÖŞEME ═══════════ */
+const PIPE_M=1.5,MAXSEG=10,MAXN=220;
+let buildMode=false,pipeAnchor=0,pipeAim=null;
+const NET={nodes:[],kids:[],outs:[],t:0,rt:-1,lvl:-1e9};
+const pipeG=new THREE.Group();scene.add(pipeG);
+const SEGGEO=new THREE.CylinderGeometry(1,1,1,8,1),JGEO=new THREE.SphereGeometry(1,10,8);
+const pRad=()=>.07+.018*lv('pipe');
+const gH=(x,z)=>Math.max(hAt(x,z),platformH(x,z));
+const UPV=new THREE.Vector3(0,1,0),QV=new THREE.Quaternion(),DV=new THREE.Vector3(),PV=new THREE.Vector3(),PD=new THREE.Vector3();
+function segXf(m,ax,ay,az,bx,by,bz,r){
+ DV.set(bx-ax,by-ay,bz-az);const len=DV.length()||.001;DV.multiplyScalar(1/len);
+ m.position.set((ax+bx)/2,(ay+by)/2,(az+bz)/2);m.quaternion.setFromUnitVectors(UPV,DV);m.scale.set(r,len,r);return len;
+}
+function netRebuild(){
+ const r=pRad();NET.rt=lv('pipe');
+ NET.nodes=[{x:SP.x,z:SP.z,y:terrainH(SP.x,SP.z)+.6,p:-1,acc:0,pt:0}];
+ S.net.forEach(n=>NET.nodes.push({x:n.x,z:n.z,y:gH(n.x,n.z)+r,p:n.p,acc:0,pt:0}));
+ NET.kids=NET.nodes.map(()=>0);NET.nodes.forEach(n=>{if(n.p>=0)NET.kids[n.p]++;});
+ pipeG.clear();
+ NET.nodes.forEach((n,i)=>{
+  if(n.p<0)return;const a=NET.nodes[n.p];
+  const m=new THREE.Mesh(SEGGEO,MAT.metal);segXf(m,a.x,a.y,a.z,n.x,n.y,n.z,r);m.castShadow=true;pipeG.add(m);
+  const j=new THREE.Mesh(JGEO,MAT.metal);j.position.set(n.x,n.y,n.z);j.scale.setScalar(r*1.22);j.castShadow=true;pipeG.add(j);
+  if(!NET.kids[i]){const f=new THREE.Mesh(SEGGEO,MAT.brass);f.position.set(n.x,n.y,n.z);f.quaternion.copy(m.quaternion);f.scale.set(r*1.45,.16,r*1.45);
+   const d=new THREE.Vector3(n.x-a.x,n.y-a.y,n.z-a.z).normalize();f.position.addScaledVector(d,r*.6);pipeG.add(f);}
+ });
+ renderer.shadowMap.needsUpdate=true;netClassify();
+}
+function aimPipe(){
+ camera.getWorldPosition(PV);camera.getWorldDirection(PD);
+ let hit=null,pt=40,tp=.6;
+ for(let t=.6;t<40;t+=.35){
+  const x=PV.x+PD.x*t,y=PV.y+PD.y*t,z=PV.z+PD.z*t;
+  if(Math.abs(x)>HALF-4||Math.abs(z)>HALF-4)break;
+  if(y<gH(x,z)){let a=tp,b=t;
+   for(let k=0;k<7;k++){const m=(a+b)/2;if(PV.y+PD.y*m<gH(PV.x+PD.x*m,PV.z+PD.z*m))b=m;else a=m;}
+   hit={x:PV.x+PD.x*b,z:PV.z+PD.z*b};pt=b;break;}
+  tp=t;}
+ let nb=-1,nt=1e9;
+ for(let i=0;i<NET.nodes.length;i++){const n=NET.nodes[i];
+  const rx=n.x-PV.x,ry=n.y-PV.y,rz=n.z-PV.z,tt=rx*PD.x+ry*PD.y+rz*PD.z;
+  if(i===pipeAnchor||tt<.4||tt>pt+1.5||tt>=nt)continue;
+  const px=rx-PD.x*tt,py=ry-PD.y*tt,pz=rz-PD.z*tt;
+  if(px*px+py*py+pz*pz<.5){nt=tt;nb=i;}}
+ if(nb>=0)return{node:nb};
+ if(!hit)return null;
+ const a=NET.nodes[pipeAnchor]||NET.nodes[0];
+ let dx=hit.x-a.x,dz=hit.z-a.z,d=Math.hypot(dx,dz);
+ if(d>MAXSEG){dx*=MAXSEG/d;dz*=MAXSEG/d;d=MAXSEG;}
+ const x=a.x+dx,z=a.z+dz,y=gH(x,z)+pRad(),len=Math.hypot(d,y-a.y);
+ return{x,z,y,len,cost:len*PIPE_M,ok:d>=1.2&&S.net.length<MAXN};
+}
+const BUILDZ={id:'build',key:'E',hold:false,
+ label:()=>{const a=pipeAim;if(!a)return 'Boru: bir yüzeye bak';
+  if(a.node!==undefined)return a.node===0?'Kaynaktan devam et':'Bu noktadan devam et';
+  return a.ok?'Boru döşe · '+D(a.len,1)+' m · '+M(a.cost):(S.net.length>=MAXN?'Hat çok uzun':'Çok kısa — biraz uzağa bak');},
+ sub:()=>'Sol tık / E döşe · Sağ tık geri al · B çık'};
+function pipePlace(){
+ const a=pipeAim;if(!a)return;
+ if(a.node!==undefined){pipeAnchor=a.node;return;}
+ if(!a.ok){toast(S.net.length>=MAXN?'Hat çok uzun':'Çok kısa — biraz uzağa bak','bad');return;}
+ if(S.money<a.cost){toast(M(a.cost)+' gerekli','bad');return;}
+ S.money-=a.cost;S.net.push({x:a.x,z:a.z,p:pipeAnchor});pipeAnchor=S.net.length;
+ AU.t(320,240,.09,'sine',.06);netRebuild();
+}
+function pipeRemove(){
+ if(!buildMode)return;
+ const a=pipeAim;const i=(a&&a.node!==undefined)?a.node:pipeAnchor;
+ if(i<=0){toast('Başlangıç noktası silinemez');return;}
+ if(NET.kids[i]>0){toast('Önce uçtaki boruları sil','bad');return;}
+ const n=NET.nodes[i],p=NET.nodes[n.p];
+ S.money+=Math.hypot(n.x-p.x,n.y-p.y,n.z-p.z)*PIPE_M*.7;
+ S.net.splice(i-1,1);for(const m of S.net)if(m.p>i)m.p--;
+ pipeAnchor=pipeAnchor===i?n.p:(pipeAnchor>i?pipeAnchor-1:pipeAnchor);
+ AU.t(240,180,.08,'sine',.05);netRebuild();
+}
+function toggleBuild(){
+ if(!running||paused||panel)return;
+ if(val('pipe')<=0){toast('Önce Tab → Boru Hattı yükseltmesini al','bad');return;}
+ if(FS.state!=='idle')return;
+ buildMode=!buildMode;VM.visible=!buildMode;$('tX').style.display=buildMode?'':'none';
+ if(buildMode){pipeAnchor=Math.min(pipeAnchor,S.net.length);toast('Boru döşeme: Sol tık / E = döşe · Sağ tık = geri al · B = çık','good');}
+ else{gSeg.visible=gPt.visible=gAnc.visible=false;}
+}
+const gMat=new THREE.MeshBasicMaterial({color:0x7cffb0,transparent:true,opacity:.6,depthTest:false,toneMapped:false}),
+ aMat=new THREE.MeshBasicMaterial({color:0xffc24a,transparent:true,opacity:.85,depthTest:false,toneMapped:false});
+const gSeg=new THREE.Mesh(SEGGEO,gMat),gPt=new THREE.Mesh(JGEO,gMat),gAnc=new THREE.Mesh(JGEO,aMat);
+[gSeg,gPt,gAnc].forEach(m=>{m.renderOrder=30;m.visible=false;m.frustumCulled=false;scene.add(m);});
+function netClassify(){
+ const lvl=S.lake>1?lakeAt(S.lake).lvl:-1e9;NET.lvl=lvl;
+ const outs=[];
+ NET.nodes.forEach((n,i)=>{if(i===0||NET.kids[i])return;
+  let kind;
+  if(Math.hypot(n.x-BP.x,n.z-BP.z)<4)kind='bench';
+  else if(hAt(n.x,n.z)<lvl+.1)kind='lake';else kind='land';
+  outs.push({i,kind});});
+ NET.outs=outs;
+}
+function econPipe(dt){
+ if(!(val('pipe')>0)||!NET.outs.length)return;
+ const rate=val('pipe')*(pumping?6:.25)/60*S.ts,v=rate*dt;
+ drawWater(v);flowNow=rate*60;
+ const lo=NET.outs.filter(o=>o.kind!=='bench'),bo=NET.outs.length-lo.length;
+ const lf=bo&&lo.length?S.valve/100:(lo.length?1:0);
+ S.buf+=v*(1-lf);
+ if(lo.length){const sh=v*lf/lo.length;
+  for(const o of lo){if(o.kind==='lake')addLake(sh);else if(NET.nodes[o.i])NET.nodes[o.i].acc+=sh;}}
+}
+function pipeFrame(dt){
+ stainTick(dt);rippleTick(dt);
+ if(NET.rt!==lv('pipe'))netRebuild();
+ NET.t-=dt;if(NET.t<=0){NET.t=.5;netClassify();}
+ if(flowNow>0)for(const o of NET.outs){const n=NET.nodes[o.i];if(!n)continue;
+  if(o.kind==='land'){
+   n.pt+=dt*10;const k=Math.floor(n.pt);
+   if(k>=1){n.pt-=k;const pv=n.acc/k;n.acc=0;
+    const a=NET.nodes[n.p];let dx=n.x-a.x,dz=n.z-a.z;const dl=Math.hypot(dx,dz)||1;dx/=dl;dz/=dl;
+    for(let j=0;j<k;j++)wAdd(n.x+dx*.2,n.y,n.z+dz*.2,dx*1.7+rnd(-.25,.25),.5+rnd(0,.4),dz*1.7+rnd(-.25,.25),pv,1);}
+  }else if(o.kind==='lake'&&Math.random()<dt*6)
+   emit(P_splash,n.x,Math.max(NET.lvl,n.y)+.05,n.z,rnd(-.4,.4),rnd(.5,1.2),rnd(-.4,.4),.5,8);}
+ if(!buildMode)return;
+ pipeAim=aimPipe();
+ const an=NET.nodes[pipeAnchor]||NET.nodes[0],r=pRad();
+ gAnc.visible=true;gAnc.position.set(an.x,an.y,an.z);gAnc.scale.setScalar(.3+.04*Math.sin(T*6));
+ const a=pipeAim;
+ if(!a){gSeg.visible=gPt.visible=false;return;}
+ if(a.node!==undefined){const n=NET.nodes[a.node];gSeg.visible=false;gPt.visible=true;gPt.material=aMat;gPt.position.set(n.x,n.y,n.z);gPt.scale.setScalar(.34);return;}
+ gPt.material=gMat;gMat.color.setHex(a.ok&&S.money>=a.cost?0x7cffb0:0xff6a5a);
+ gSeg.visible=gPt.visible=true;segXf(gSeg,an.x,an.y,an.z,a.x,a.y,a.z,r*1.1);
+ gPt.position.set(a.x,a.y,a.z);gPt.scale.setScalar(.22);
+}
 
 /* ═══════════ HELD VESSEL ═══════════ */
 const VM=new THREE.Group();camera.add(VM);
@@ -1103,7 +1448,7 @@ function toCamp(){
 }
 
 /* ═══════════ INPUT ═══════════ */
-const keys={};let locked=false,dragging=false,mouseDown=false;
+const keys={};let locked=false,dragging=false,mouseDown=false,mouseR=false;
 let running=false,paused=false,panel=null;
 const touchMode=matchMedia('(pointer:coarse)').matches;
 if(touchMode)$('touch').classList.add('on');
@@ -1113,18 +1458,19 @@ addEventListener('keydown',e=>{
  if(k==='escape'){if(panel)closePanel();else if(running)togglePause();return;}
  if(k==='m'){AU.init();AU.set(!AU.on);save();return;}
  if(!running||paused||panel)return;
- if(k==='r'){toCamp();return;}
  if(k===' '){e.preventDefault();doJump();return;}
  keys[k]=true;
  if(k==='e')onTap();
  if(k==='f')onFish();
+ if(k==='b')toggleBuild();
  if(['w','a','s','d','shift'].includes(k))e.preventDefault();
 });
 addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false;});
-canvas.addEventListener('mousedown',()=>{AU.init();AU.res();if(!running||paused||panel)return;
+canvas.addEventListener('mousedown',(ev)=>{AU.init();AU.res();if(!running||paused||panel)return;
+ if(ev.button===2){mouseR=true;if(buildMode&&(locked||touchMode))pipeRemove();return;}
  mouseDown=true;if(!locked&&!touchMode){canvas.requestPointerLock&&canvas.requestPointerLock();dragging=true;}
- if(FS.state==='bite')hook();});
-addEventListener('mouseup',()=>{mouseDown=false;dragging=false;});
+ if(FS.state==='bite')hook();else if(FS.state==='idle'&&(locked||touchMode))onTap();});
+addEventListener('mouseup',()=>{mouseDown=false;mouseR=false;dragging=false;});
 addEventListener('mousemove',e=>{if(!running||paused||panel)return;
  if(locked||dragging){const s=S.set.sens/100*.0022;yaw.rotation.y-=e.movementX*s;pitch.rotation.x=clamp(pitch.rotation.x-e.movementY*s,-1.35,1.35);}});
 document.addEventListener('pointerlockchange',()=>{locked=document.pointerLockElement===canvas;});
@@ -1146,7 +1492,7 @@ $('lookPad').addEventListener('touchmove',e=>{for(const t of e.changedTouches)if
 $('lookPad').addEventListener('touchend',()=>lookId=null);
 const bind=(id,dn,up)=>{const el=$(id);el.addEventListener('touchstart',e=>{e.preventDefault();dn();},{passive:false});el.addEventListener('touchend',e=>{e.preventDefault();up&&up();},{passive:false});};
 bind('tE',()=>{AU.init();tE=true;onTap();if(FS.state==='bite')hook();},()=>tE=false);
-bind('tF',()=>onFish());bind('tJump',()=>doJump());
+bind('tB',()=>toggleBuild());bind('tX',()=>pipeRemove());bind('tF',()=>onFish());bind('tJump',()=>doJump());bind('tQ',()=>{keys['q']=true;},()=>{keys['q']=false;});
 bind('tSp',()=>{tSprint=!tSprint;$('tSp').classList.toggle('act',tSprint);});
 
 /* ═══════════ UI ═══════════ */
@@ -1168,7 +1514,7 @@ function sellAll(auto=false){
  if(S.stock>0){const t=tier('line');gross+=S.stock*(t.pl-t.mt);S.sold+=S.stock;S.stock=0;}
  if(S.fish.length){let kg=0;for(const f of S.fish){gross+=f.kg*f.p;kg+=f.kg;}S.fishKg+=kg;S.fish=[];}
  if(gross<=0){if(!auto)toast('Satacak bir şey yok');return;}
- S.money+=gross;
+ S.money+=gross;S.cEarn+=gross;
  if(val('autopay')){const p=Math.min(S.debt,S.money);S.debt-=p;S.money-=p;}
  AU.coin();floatTxt('+'+M(gross),'#f0a93b');if(!auto)toast('Satıldı: '+M(gross),'gold');
 }
@@ -1178,11 +1524,10 @@ function payBill(){if(S.debt<=0){toast('Fatura yok');return;}
 function addFish(kg,p,name){
  const cur=S.fish.reduce((a,f)=>a+f.kg,0);
  if(cur+kg>val('well')){toast('Canlı tank dolu — sat veya yükselt','bad');return false;}
- S.fish.push({kg,p,n:name});return true;}
+ S.fish.push({kg,p,n:name});S.cFish+=kg;return true;}
 function econ(dt){
  const ts=S.ts;flowNow=0;
- if(val('pipe')>0){const rate=val('pipe')*(pumping?6:.25)/60*ts,v=rate*dt;
-  drawWater(v);const tl=v*S.valve/100;addLake(tl);S.buf+=v-tl;flowNow=rate*60;}
+ econPipe(dt);
  const t=tier('line'),made=Math.min(S.buf,t.v/60*ts*dt);
  S.buf-=made;S.stock+=made;billRate=flowNow*val('tariff');
  for(let i=0;i<lv('autofish');i++)S.holds[i]=Math.min(90,S.holds[i]+20/60*ts*dt);
@@ -1217,8 +1562,8 @@ const ZONES=[
    return L(S.stock)+' paketli · '+D(S.fish.reduce((a,f)=>a+f.kg,0),1)+' kg ≈ '+M(S.stock*(t.pl-t.mt)+fv);},tap:true,key:'E'},
  {id:'bill',x:CP.x+2.1,z:CP.z+1.3,r:2.2,label:()=>'Faturayı öde',sub:()=>S.debt>0?M(S.debt)+' ödenmemiş':'fatura yok',tap:true,key:'E'},
  {id:'sign',x:SIP.x,z:SIP.z,r:2.5,face:true,label:()=>'Yükseltme panosu',sub:()=>'Tab ile de açılır',tap:true,key:'E'},
- {id:'pump',x:PP.x,z:PP.z,r:2.9,face:true,label:()=>val('pipe')?'Pompayı çalıştır':'Hat kurulu değil',
-  sub:()=>val('pipe')?'basılı tut = 6× debi':'Yükseltmeler → Su Hattı',hold:true,key:'E'},
+ {id:'pump',x:PP.x,z:PP.z,r:2.9,face:true,label:()=>val('pipe')?(NET.outs.length?'Pompayı çalıştır':'Hat bağlı değil'):'Boru hattı yok',
+  sub:()=>val('pipe')?(NET.outs.length?'basılı tut = 6× debi':'B ile kaynaktan göle boru döşe'):'Tab → Boru Hattı',hold:true,key:'E'},
 ];
 for(let i=0;i<3;i++){
  ZONES.push({id:'cage'+i,x:CAGE_POS[i].x,z:CAGE_POS[i].z,r:3.6,
@@ -1227,18 +1572,22 @@ for(let i=0;i<3;i++){
  ZONES.push({id:'af'+i,x:AF_POS[i].x,z:AF_POS[i].z,r:3.4,
   label:()=>S.holds[i]>=1?'Sepeti boşalt':'Sepet doluyor…',sub:()=>D(S.holds[i],1)+' / 90 kg',tap:true,key:'E',gate:()=>lv('autofish')>i});
 }
-let near=null,holdT=0,lakeZone=null;
+let near=null,holdT=0,lakeZone=null,scoopLatch=false,scoopAim=null;
+const SCOOPZ={id:'scoop',label:()=>'Suyu geri al',sub:()=>'tıkla / E basılı · Q ile dök',hold:true,key:'E'};
+const FREEZ={id:'free',label:()=>'Dök: Q / sağ tık',sub:()=>'bakış yönüne akar · her yere',hold:false,key:'Q'};
 function findZone(){
+ if(buildMode)return BUILDZ;
  let best=null,bd=1e9;const px=yaw.position.x,pz=yaw.position.z;
  for(const z of ZONES){if(z.gate&&!z.gate())continue;
   const d=Math.hypot(px-z.x,pz-z.z);
   if(d<z.r&&d<bd&&(!z.face||facing(z.x,z.z))){bd=d;best=z;}}
  lakeZone=null;
- if(!best&&S.carry>0){const w=waterAhead(4.4,.02);
-  if(w){lakeZone={id:'lake',label:()=>'Göle dök',sub:()=>'hacim ilerler · para kazandırmaz',hold:true,key:'E',target:w};best=lakeZone;}}
+ if(!best&&!pouring&&wn>0&&S.carry<cap()-1e-4){const a=aimWater();if(a){scoopAim=a;best=SCOOPZ;}}
+ if(!best&&S.carry>0)best=FREEZ;
  return best;
 }
 function onTap(){
+ if(buildMode){pipePlace();return;}
  if(!near)return;
  if(near.id==='cart')sellAll();
  else if(near.id==='bill')payBill();
@@ -1259,11 +1608,14 @@ function holdAct(dt){
  const stop=()=>{filling=pouring=pumping=false;vmTarget=POSE.idle;
   fillStream.update(ZERO,ZERO,0,0,0,T);pourStream.update(ZERO,ZERO,0,0,0,T);
   if(wasPour&&pourAccum>.001){S.trips++;pourAccum=0;}};
- if(!near||!near.hold){stop();holdT=0;return;}
- if(!(keys['e']||tE)){stop();holdT=Math.max(0,holdT-dt*3);return;}
+ const qHeld=!buildMode&&(keys['q']||mouseR)&&S.carry>1e-6&&FS.state==='idle';
+ const eRaw=keys['e']||tE||mouseDown;if(!eRaw)scoopLatch=false;
+ const eHeld=!buildMode&&eRaw&&near&&near.hold&&!(scoopLatch&&near===FREEZ);
+ if(!qHeld&&!eHeld){stop();if(!near||!near.hold)holdT=0;else holdT=Math.max(0,holdT-dt*3);return;}
+ const mode=qHeld?'free':near.id;
  const ts=S.ts;
  VP.mouth.getWorldPosition(MOUTH_W);VP.lip.getWorldPosition(LIP_W);
- if(near.id==='spring'){
+ if(mode==='spring'){
   const room=cap()-S.carry;
   if(room<=1e-6){filling=false;vmTarget=POSE.idle;fillStream.update(ZERO,ZERO,0,0,0,T);return;}
   const v=Math.min(room,val('fill')/60*ts*dt);S.carry+=v;drawWater(v);
@@ -1273,9 +1625,24 @@ function holdAct(dt){
   pourStream.update(ZERO,ZERO,0,0,0,T);
   if(Math.random()<dt*26)emit(P_splash,MOUTH_W.x+rnd(-.04,.04),MOUTH_W.y,MOUTH_W.z+rnd(-.04,.04),rnd(-.35,.35),rnd(.4,1.1),rnd(-.35,.35),.35,7);
   tapHandle.rotation.z=Math.min(1.1,tapHandle.rotation.z+dt*4);
- }else if(near.id==='lake'||near.id==='bench'){
+ }else if(mode==='free'){
   if(S.carry<=1e-6){pouring=false;vmTarget=POSE.idle;pourStream.update(ZERO,ZERO,0,0,0,T);return;}
-  const v=Math.min(S.carry,Math.max(6,val('fill')*1.8)/60*ts*dt);
+  const v=Math.min(S.carry,Math.max(cap()/2.2,.04)*dt);
+  S.carry-=v;pourAccum+=v;
+  pouring=true;filling=false;holdT=1;vmTarget=POSE.pour;
+  fillStream.update(ZERO,ZERO,0,0,0,T);
+  VP.lip.getWorldPosition(LIP_W);{const gh=groundRay(9);if(gh)pourStream.update(LIP_W,gh,-.12,.035,.55,T);else pourStream.update(ZERO,ZERO,0,0,0,T);}
+  emitPour(v,dt);
+ }else if(mode==='scoop'){
+  scoopLatch=true;
+  const room=cap()-S.carry;
+  if(room<=1e-6||!scoopAim){filling=pouring=false;vmTarget=POSE.idle;return;}
+  {const g=scoopWater(scoopAim,Math.min(room,Math.max(6,val('fill')*1.8)/60*ts*dt*2));S.carry+=g;S.cScoop+=g;}
+  filling=false;pouring=false;holdT=1;vmTarget=POSE.fill;
+  fillStream.update(ZERO,ZERO,0,0,0,T);pourStream.update(ZERO,ZERO,0,0,0,T);
+ }else if(mode==='bench'){
+  if(S.carry<=1e-6){pouring=false;vmTarget=POSE.idle;pourStream.update(ZERO,ZERO,0,0,0,T);return;}
+  const v=Math.min(S.carry,Math.max(6,val('fill')*1.8)*val('dump')/60*ts*dt);
   S.carry-=v;pourAccum+=v;
   if(near.id==='lake'){addLake(v);const w=lakeZone.target;TGT.set(w.x,w.y+.02,w.z);}
   else{S.buf+=v;tank.getWorldPosition(TGT);TGT.y+=.6;}
@@ -1284,7 +1651,7 @@ function holdAct(dt){
   pourStream.update(LIP_W,TGT,-.12,.035,clamp(v/dt/(cap()*.9),.25,1),T);
   if(Math.random()<dt*(near.id==='lake'?34:20))
    emit(P_splash,TGT.x+rnd(-.12,.12),TGT.y+.02,TGT.z+rnd(-.12,.12),rnd(-.7,.7),rnd(.5,1.6),rnd(-.7,.7),.5,8);
- }else if(near.id==='pump'&&val('pipe')>0){
+ }else if(mode==='pump'&&val('pipe')>0){
   pumping=true;filling=pouring=false;holdT=1;vmTarget=POSE.idle;wheel.rotation.z-=dt*7;
   fillStream.update(ZERO,ZERO,0,0,0,T);pourStream.update(ZERO,ZERO,0,0,0,T);
  }else{stop();holdT=0;}
@@ -1293,7 +1660,7 @@ function holdAct(dt){
 
 /* ═══════════ FISHING ═══════════ */
 const FS={state:'idle',t:0,sp:null,kg:0,ten:0,stam:0,zone:[.35,.72],pull:0,slack:0,bob:new THREE.Vector3(),castT:0};
-function onFish(){
+function onFish(){if(buildMode)return;
  if(S.lake<FISH_VOL){toast('Balık için göl '+L(FISH_VOL)+' olmalı','bad');return;}
  if(FS.state==='idle'){
   const w=waterAhead(16,.32);
@@ -1399,7 +1766,7 @@ function move(dt){
  if(platformH(nx,nz)===-Infinity&&nd>1.08&&grounded){
   const d0=depthAt(yaw.position.x,yaw.position.z,lvl);
   if(d0<=nd){nx=yaw.position.x;nz=yaw.position.z;}}
- const dw=Math.hypot(nx,nz);if(dw>112){const a=Math.atan2(nz,nx);nx=Math.cos(a)*112;nz=Math.sin(a)*112;}
+ const dw=Math.hypot(nx,nz);if(dw>178){const a=Math.atan2(nz,nx);nx=Math.cos(a)*178;nz=Math.sin(a)*178;}
  S.steps+=Math.hypot(nx-yaw.position.x,nz-yaw.position.z);
  yaw.position.x=nx;yaw.position.z=nz;
  const gY=Math.max(terrainH(nx,nz),platformH(nx,nz));
@@ -1416,7 +1783,7 @@ function move(dt){
  }else{grounded=false;coyote=Math.max(0,coyote-dt);}
  landDip=Math.max(0,landDip-dt*.6);
  yaw.position.y=ny+EYE;
- if(unstick()&&Math.random()<.02)toast('Açıklığa çıkarıldın — R ile kampa dönebilirsin');
+ unstick();
  curSpeed=Math.hypot(vel.x,vel.z);
  if(S.set.bob&&curSpeed>.4&&grounded){bobT+=dt*curSpeed*1.9;
   pitch.position.y=Math.sin(bobT)*.034-landDip;pitch.position.x=Math.cos(bobT*.5)*.019;}
@@ -1428,10 +1795,10 @@ function move(dt){
    if(wading)for(let i=0;i<5;i++)emit(P_splash,nx+rnd(-.2,.2),lvl+.02,nz+rnd(-.2,.2),rnd(-.5,.5),rnd(.3,.9),rnd(-.5,.5),.4,8);}}
  $('wetLens').style.opacity=wading?String(clamp(wDep/1.1,0,1)*.9):'0';
  const sf=val('lid');
- if(sprint&&grounded&&curSpeed>4&&S.set.spill&&sf>0&&S.carry>cap()*.5){
-  const loss=Math.min(S.carry,cap()*.085*sf*dt);S.carry-=loss;S.spill+=loss;
-  if(Math.random()<dt*28){const wp=new THREE.Vector3(.3,-.22,-.55).applyMatrix4(camera.matrixWorld);
-   emit(P_drop,wp.x,wp.y,wp.z,rnd(-.7,.7),rnd(-.2,.5),rnd(-.7,.7),.7);}
+ if(sprint&&grounded&&curSpeed>4&&sf>0&&S.carry>1e-6){
+  const loss=Math.min(S.carry,cap()*.012*sf*dt);S.carry-=loss;S.spill+=loss;spAcc+=loss;spT+=dt;
+  if(spT>=.09){VP.lip.getWorldPosition(LIP_W);camera.getWorldDirection(DIRW);
+   wAdd(LIP_W.x,LIP_W.y,LIP_W.z,DIRW.x*curSpeed*.35+rnd(-.5,.5),.8+rnd(0,.5),DIRW.z*curSpeed*.35+rnd(-.5,.5),spAcc,0);spAcc=0;spT=0;}
   $('spillW').classList.add('on');
  }else $('spillW').classList.remove('on');
  const k=Math.min(1,dt*9);
@@ -1464,14 +1831,14 @@ function visuals(dt){
  const slosh=clamp(curSpeed/8,0,1)*(grounded?1:.4);
  VP.water.rotation.x=-VM.rotation.x*.92+Math.cos(T*4.4)*.045*slosh;
  VP.water.rotation.z=-VM.rotation.z*.92+Math.sin(T*5.2)*.055*slosh;
- DG.visible=S.lake>=FISH_VOL;pipes.visible=val('pipe')>0;
+ DG.visible=S.lake>=FISH_VOL;
  cageG.visible=lv('cage')>0;afG.visible=lv('autofish')>0;
  cageMeshes.forEach((g,i)=>{g.visible=lv('cage')>i;g.position.y=lk.lvl+.06+Math.sin(T*1.3+i)*.03;
-  g.children[1].scale.y=clamp(.3+S.cages[i].b/160,.3,1.2);});
+  const net=g.userData.net;if(net)net.scale.y=clamp(.3+S.cages[i].b/160,.3,1.2);});
  afMeshes.forEach((g,i)=>{g.visible=lv('autofish')>i;
   g.position.y=Math.max(lk.lvl,bed(AF_POS[i].x,AF_POS[i].z))+.1;
-  g.children[8].rotation.z=-.32+Math.sin(T*1.1+i)*.22;
-  g.children[10].material.color.setHex(S.holds[i]>1?0xa3e635:0x4a6b3a);});
+  const arm=g.userData.arm;if(arm)arm.rotation.z=-.32+Math.sin(T*1.1+i)*.22;
+  const lt=g.userData.light;if(lt)lt.material.color.setHex(S.holds[i]>1?0xa3e635:0x4a6b3a);});
  const showFish=S.lake>FISH_VOL;
  swim.forEach(f=>{
   const rr=f.r*LC.PS*1.5,x=LC.PX+Math.cos(f.a)*rr,z=LC.PZ+Math.sin(f.a)*rr,d=depthAt(x,z,lk.lvl);
@@ -1488,7 +1855,7 @@ function visuals(dt){
   b.m.rotation.y=-b.a;b.m.scale.setY(.6+.5*Math.abs(Math.sin(T*4+b.ph)));});
  for(let i=0;i<P_leaf.d.length;i++){const d=P_leaf.d[i];d.ph+=dt;
   d.x+=(Math.sin(d.ph*.6)*.16+d.vx)*dt;d.y+=d.vy*dt;
-  if(d.y>12){d.y=.5;d.x=rnd(-50,50);d.z=rnd(-20,55);}
+  if(d.y>12){d.y=.5;d.x=rnd(-60,60);d.z=rnd(40,130);}
   const a=P_leaf.p.array;a[i*3]=d.x;a[i*3+1]=d.y;a[i*3+2]=d.z;}
  P_leaf.p.needsUpdate=true;
  updP(P_drop,dt);updP(P_splash,dt);updP(P_dust,dt);updP(P_spark,dt);
@@ -1506,7 +1873,7 @@ let hc={},birdT=5;
 function st(id,v){if(hc[id]!==v){hc[id]=v;$(id).textContent=v;}}
 function hud(dt){
  const pct=S.lake/GOAL*100,lk=lakeAt(S.lake);
- st('lakePct',D(pct,2)+'%');st('lakeL',L(S.lake)+' / 1.000.000 L');
+ st('lakePct',D(pct,2)+'%');st('lakeL',L(S.lake)+' / '+L(GOAL));
  $('lakeBar').style.width=clamp(pct,0,100)+'%';
  st('depthV',D(lk.depth,2)+' m');st('areaV',nf.format(Math.round(lk.area))+' m²');
  st('moneyV',M(S.money));st('debtV',M(S.debt));$('debtV').classList.toggle('zero',S.debt<1);
@@ -1517,7 +1884,7 @@ function hud(dt){
  st('stockV',L(S.stock));st('bufV',L(S.buf));st('fishV',D(S.fish.reduce((a,f)=>a+f.kg,0),1)+' kg');
  st('spdV',D(curSpeed,1)+' m/s');st('jmpV',grounded?'hazır':'—');
  $('airTag').classList.toggle('on',!grounded);
- const sys=[['Hat',val('pipe')>0],['Paket',lv('line')>0],['Oto-Sat',!!val('autosell')],['Kafes',lv('cage')>0],['Oto-Olta',lv('autofish')>0]];
+ const sys=[['Hat',val('pipe')>0&&NET.outs.length>0],['Paket',lv('line')>0],['Oto-Sat',!!val('autosell')],['Kafes',lv('cage')>0],['Oto-Olta',lv('autofish')>0]];
  const sh=sys.map(([n,on])=>`<span class="pill ${on?'on':'off'}">${n}</span>`).join('');
  if(hc.sys!==sh){hc.sys=sh;$('sysRow').innerHTML=sh;}
  near=findZone();
@@ -1528,22 +1895,23 @@ function hud(dt){
  }else{$('prompt').classList.remove('on');$('cross').classList.remove('hot');}
  let ob;
  if(S.lake>=GOAL)ob='Göl doldu. Kıyıda kal, oltayı at ya da tesisini büyütmeye devam et.';
- else if(S.carry>cap()*.92)ob='Kabın dolu — kıyıya bakıp E ile göle dök, ya da tezgâha akıt (para).';
- else if(S.lake<400)ob='Kaynak çeşmesinden E basılı tutarak kabını doldur. Sonra kıyıya dön, E ile göle akıt.';
- else if(lv('cap')<2)ob='Tab → Su Kabı. Kapasite arttıkça her tur daha çok litre. Space zıplar, Shift koşar, R kampa döner.';
+ else if(S.carry>cap()*.92)ob='Kabın dolu — Q / sağ tık ile istediğin yere dök (su akar, göle ulaşırsa hacim artar) ya da tezgâha E ile akıt (para).';
+ else if(S.lake<400)ob='Kaynak çeşmesinden E basılı tutarak kabını doldur. Sonra Q / sağ tık ile istediğin yere dök: su yokuş aşağı akıp göle ulaşır.';
+ else if(lv('cap')<2)ob='Tab → Su Kabı. Kapasite arttıkça her tur daha çok litre. Space zıplar, Shift koşar.';
  else if(val('speed')<6)ob='Patika Ayakkabısı ve Hafif Adım yükseltmeleri hareketi belirgin hızlandırır.';
- else if(val('pipe')===0)ob='Su Hattı\'nı kur: sürekli akış başlar. Pompa istasyonunda E basılı tut = 6× debi.';
+ else if(val('pipe')===0)ob='Tab → Boru Hattı: hortumu al. Sonra B ile kaynaktan göle elle boru döşe, su kendiliğinden akar.';
+ else if(!NET.outs.length)ob='B tuşuyla boru döşe: kaynak çeşmesinden başla, ucu göle (ya da tezgâha) ulaşsın. Uç suyun içindeyse direkt göle, karadaysa yokuş aşağı akar.';
  else if(S.lake<FISH_VOL)ob='Göl '+L(FISH_VOL)+' olunca iskele çıkar ve balıkçılık açılır. Vanayı göle çevir.';
  else if(lv('rod')===0&&S.money>550)ob='İskelenin ucunda F ile at. Olta kamışını yükseltmek direnci hızlı düşürür.';
  else if(lv('cage')===0&&S.lake>=CAGE_VOL)ob='Kafes açıldı. Yavru at, yemle, hasat et — büyüme yemle olur.';
  else if(lv('autofish')===0&&S.lake>=AF_VOL)ob='Otomatik balık tutucu açıldı. Sepetleri E ile boşalt, arabada sat.';
- else ob='Debiyi büyüt, vanayı göle çevir, balık gelirini artır. Hedef 1.000.000 L.';
+ else ob='Debiyi büyüt, vanayı göle çevir, balık gelirini artır. Hedef 20.000.000 L.';
  st('objT',ob);
  birdT-=dt;if(birdT<=0){birdT=rnd(7,16);AU.bird();}
 }
 function syncPause(){
  $('sensR').value=S.set.sens;$('fovR').value=S.set.fov;
- $('bobT').classList.toggle('on',!!S.set.bob);$('spillT').classList.toggle('on',!!S.set.spill);$('audT').classList.toggle('on',AU.on);
+ $('bobT').classList.toggle('on',!!S.set.bob);$('audT').classList.toggle('on',AU.on);
  const t=tier('line');
  $('ePack').textContent=M(S.buf>0?t.v*S.ts*(t.pl-t.mt):0)+'/dk';
  $('eBill').textContent=M(billRate)+'/dk';
@@ -1591,19 +1959,19 @@ function winGame(){
  $('endStats').innerHTML=[
   ['Doldur-boşalt turu',nf.format(S.trips)],['Çekilen su',L(S.drawn)],
   ['Satılan su',L(S.sold)],['Satılan balık',D(S.fishKg,0)+' kg'],
-  ['Dökülen su',L(S.spill)],['Yürünen',nf.format(Math.round(S.steps))+' m'],
+  ['Dökülen su',L(S.spill)],['Toprağa emilen',L(S.lost)],['Yürünen',nf.format(Math.round(S.steps))+' m'],
   ['Zıplama',nf.format(S.jumps)],['Prototip süresi',D(mins,1)+' dk'],
  ].map(([a,b])=>`<div class="stat"><div class="lbl">${a}</div><b>${b}</b></div>`).join('');
  for(let i=0;i<180;i++)emit(P_spark,rnd(-22,22),rnd(1,7),rnd(-10,34),rnd(-2,2),rnd(2,7),rnd(-2,2),rnd(1.4,2.6),4);
  setTimeout(()=>openPanel('endOv'),900);
- toast('1.000.000 LİTRE — GÖL DOLDU','gold');
+ toast('20.000.000 LİTRE — GÖL DOLDU','gold');
 }
 
 /* ═══════════ BUTTONS ═══════════ */
 $('startBtn').onclick=()=>{AU.init();AU.res();S=fresh();S.ts=+$('speedSel').value;begin();};
 $('contBtn').onclick=()=>{AU.init();AU.res();begin();};
 $('resumeBtn').onclick=togglePause;$('pauseBtn').onclick=togglePause;
-$('campBtn').onclick=()=>{toCamp();togglePause();};
+
 $('upBtn').onclick=toggleUp;$('upBtn2').onclick=()=>{togglePause();toggleUp();};
 $('upClose').onclick=closePanel;
 $('resetBtn').onclick=()=>{if(confirm('Yeni oyun? Mevcut ilerleme silinir.')){try{localStorage.removeItem(SKEY);}catch(e){}S=fresh();paused=false;$('pauseOv').classList.add('hide');resetFish();begin();}};
@@ -1614,12 +1982,14 @@ $('speedSel').onchange=e=>{S.ts=+e.target.value;toast('Prototip hızı '+S.ts+'�
 $('sensR').oninput=e=>{S.set.sens=+e.target.value;save();};
 $('fovR').oninput=e=>{S.set.fov=+e.target.value;save();};
 const tog=(id,k)=>$(id).onclick=()=>{S.set[k]=S.set[k]?0:1;$(id).classList.toggle('on',!!S.set[k]);save();};
-tog('bobT','bob');tog('spillT','spill');
+tog('bobT','bob');
+$('testBtn').onclick=()=>{S.money+=1000000;AU.init();AU.coin();toast('Test: +1.000.000 ₺','gold');save();};
+$('testLakeBtn').onclick=()=>{addLake(100000);AU.init();AU.splash();toast('Test: göle +100.000 L','gold');save();};
 $('audT').onclick=()=>{AU.init();AU.set(!AU.on);save();};
 function begin(){
  running=true;paused=false;panel=null;
  ['startOv','pauseOv','upOv','endOv'].forEach(i=>$(i).classList.add('hide'));
- buildVessel();resetFish();
+ buildVessel();resetFish();wn=0;wIM.count=0;wAir.count=0;wHi.count=0;buildMode=false;VM.visible=true;pipeAnchor=S.net.length;NET.rt=-1;NET.t=0;netRebuild();
  placePlayer(findSafeSpawn());
  $('speedSel').value=String(S.ts);
  AU.set(!!S.set.aud);camera.fov=S.set.fov;camera.updateProjectionMatrix();
@@ -1635,7 +2005,7 @@ function frame(now){
  requestAnimationFrame(frame);
  const dt=Math.min(.05,(now-last)/1000);last=now;
  const active=running&&!paused&&!panel;
- if(active){move(dt);holdAct(dt);econ(dt);fishTick(dt);saveT+=dt;if(saveT>4){saveT=0;save();}}
+ if(active){move(dt);holdAct(dt);econ(dt);waterStep(dt);pipeFrame(dt);mileTick(dt);fishTick(dt);saveT+=dt;if(saveT>4){saveT=0;save();}}
  else{filling=pouring=pumping=false;
   fillStream.update(ZERO,ZERO,0,0,0,T);pourStream.update(ZERO,ZERO,0,0,0,T);
   AU.loop(AU.fillG,0);AU.loop(AU.pourG,0);}
@@ -1649,7 +2019,7 @@ if(load()){$('contBtn').style.display='';$('speedSel').value=String(S.ts);}
 AU.on=!!S.set.aud;
 $('audOn').style.display=AU.on?'':'none';$('audOff').style.display=AU.on?'none':'';
 $('audioBtn').classList.toggle('off',!AU.on);
-$('bobT').classList.toggle('on',!!S.set.bob);$('spillT').classList.toggle('on',!!S.set.spill);$('audT').classList.toggle('on',AU.on);
+$('bobT').classList.toggle('on',!!S.set.bob);$('audT').classList.toggle('on',AU.on);
 placePlayer(findSafeSpawn());
 refreshPads(lakeAt(S.lake).lvl);
 renderer.shadowMap.needsUpdate=true;
